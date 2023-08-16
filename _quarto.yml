@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  title: "Legend Dynasty"
+  title: "LeGeND Dynasty"
   navbar:
     left:
       - href: index.qmd
