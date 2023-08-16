@@ -17,22 +17,26 @@ players <- players %>%
     gold = map_int(cards, \(x) sum(x$max_level - x$level <= 2)),
     legendary = map_int(cards, \(x) sum(x$max_level - x$level <= 1)),
     maxed = map_int(cards, \(x) sum(x$max_level - x$level <= 0)),
+    elite = map_int(cards, \(x) sum(x$max_level - x$level < 0)),
   )
 
 clan %>% 
   select(starts_with('player')) %>%
   rename_with(.fn = \(x) str_sub(x, start = 8)) %>% 
   select(-exp_level, -clan_rank, -previous_clan_rank, -starts_with('arena'), -clan_chest_points) %>% 
-  mutate(last_seen = time_short(last_seen)) %>% 
+  mutate(
+    last_seen_flag = time_min(last_seen) > (48 * 60),
+    last_seen = time_short(last_seen)
+  ) %>% 
   relocate(name, tag, last_seen, role, trophies, starts_with('donations')) %>% 
   left_join(
-    players %>% select(tag, war_day_wins, maxed, legendary, gold, silver, bronze),
+    players %>% select(tag, war_day_wins, elite, maxed, legendary, gold, silver, bronze),
     by = 'tag'
   ) %>% 
   gt() %>% 
   tab_spanner(label = 'Player', columns = c(name, tag)) %>% 
   tab_spanner(label = 'Donations', columns = starts_with('donations')) %>% 
-  tab_spanner(label = 'Card Levels', columns = c(maxed, legendary, gold, silver, bronze)) %>% 
+  tab_spanner(label = 'Card Levels', columns = c(elite, maxed, legendary, gold, silver, bronze)) %>% 
   cols_label(
     name = 'Name',
     tag = 'Tag',
@@ -42,12 +46,14 @@ clan %>%
     donations = 'Don.',
     donations_received = 'Rec.',
     war_day_wins = 'CW1 Wins',
+    elite = 'E',
     maxed = 'M',
     legendary = 'L',
     gold = 'G',
     silver = 'S',
     bronze = 'B'
   ) %>% 
+  cols_hide(last_seen_flag) %>% 
   data_color(
     columns = trophies,
     fn = scales::col_numeric(
@@ -59,10 +65,19 @@ clan %>%
   data_color(
     columns = donations,
     fn = scales::col_numeric(
-      palette = '#b7e1cd',
-      domain = c(200)
+      palette = c('#FFFFFFFF', '#b7e1cd'),
+      domain = c(0, 200)
     )
-  ) 
+  ) %>% 
+  data_color(
+    columns = last_seen_flag,
+    target_columns = last_seen,
+    method = 'factor',
+    palette = c('#FFFFFFFF', '#982649')
+  ) %>% 
+  opt_table_font(
+    font = google_font('Martel Sans')
+  )
 
 war_sheet <- left_join(
   war$clan[[1]] %>% 

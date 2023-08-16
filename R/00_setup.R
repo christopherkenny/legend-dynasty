@@ -1,9 +1,9 @@
-library(tidyverse)
-library(royale)
-library(gt)
-library(lubridate)
-library(googlesheets4)
-
+suppressPackageStartupMessages({
+  library(tidyverse)
+  library(royale)
+  library(gt)
+  library(googlesheets4)
+})
 clan_tag <- '99R2PQVR'
 
 time_short <- function(times) {
@@ -15,4 +15,17 @@ time_short <- function(times) {
   out
 }
 
+time_min <- function(times) {
+  times <- as.duration(floor_date(as_datetime(times), 'minutes') %--% floor_date(now(), 'minutes')) / dminutes(1)
+  times
+}
+
 walk(fs::dir_ls('R/utils'), source)
+
+# prep data ----
+
+## player ----
+
+## clan ----
+
+## war ----
