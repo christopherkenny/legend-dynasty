@@ -2,8 +2,4 @@
 title: "About"
 ---
 
-About this site
-
-```{r}
-1 + 1
-```
+This is a dashboard for the Legend Dynasty! clan in Clash Royale, built in [Quarto](https://quarto.org/) using the [`royale` R package](https://github.com/christopherkenny/royale).

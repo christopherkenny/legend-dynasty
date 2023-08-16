@@ -6,7 +6,9 @@ website:
   navbar:
     left:
       - href: index.qmd
-        text: Home
+        text: Activity
+      - href: cards.qmd
+        text: Cards
       - about.qmd
 
 format:

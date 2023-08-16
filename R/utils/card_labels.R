@@ -122,11 +122,10 @@ card_labels <- tibble::tribble(
 
 make_master_card_list <- function() {
   pl <- cr_get_player('JYJQC88')
-  pl$cards[[1]] %>% 
-    unnest(icon_urls) %>% 
+  pl$cards[[1]] |> 
     select(
-      name, max_level, image = icon_urls
-    ) %>% 
-    left_join(card_labels, by = 'name') %>% 
+      name, max_level, image = icon_urls_medium
+    ) |> 
+    left_join(card_labels, by = 'name') |> 
     mutate(label = ifelse(is.na(label), name, label))
 }

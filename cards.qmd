@@ -1,0 +1,38 @@
+---
+title: "Cards"
+date: last-modified
+execute: 
+  echo: false
+---
+
+```{r}
+#| label: setup
+suppressPackageStartupMessages({library(here)})
+source(here('R/00_setup.R'))
+```
+
+```{r}
+#| label: table
+
+cards <- read_csv(here('data/cards.csv'), 
+                  col_types = cols(.default = col_character()),
+                  show_col_types = FALSE)
+```
+
+:::{.column-page}
+```{r}
+cards |> 
+  gt() |>
+  text_transform(
+    locations = cells_body(rows = 1),
+    fn = function(x) if (!is.na(x)) web_image(x) else ''
+  )  |> 
+  opt_table_font(
+    font = google_font('Martel Sans')
+  ) |> 
+  opt_interactive(
+    use_compact_mode = TRUE,
+    page_size_default = 50
+  )
+```
+:::
