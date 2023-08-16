@@ -95,7 +95,7 @@ boat <- players |>
                              'Electro Giant'))) |> 
   rowwise() |> 
   mutate(
-    boat = sum(c_across(`P.E.K.K.A`:`Electro Giant`))
+    boat = sum(c_across(`P.E.K.K.A`:`Electro Giant`), na.rm = TRUE)
   ) |> 
   ungroup() |> 
   arrange(desc(boat)) |> 

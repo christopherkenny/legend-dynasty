@@ -7,9 +7,12 @@ website:
     left:
       - href: index.qmd
         text: Activity
+      - href: boat.qmd
+        text: "Boat Defense"
       - href: cards.qmd
         text: Cards
       - about.qmd
+
 
 format:
   html:

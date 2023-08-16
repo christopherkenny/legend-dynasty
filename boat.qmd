@@ -18,17 +18,35 @@ boat <- read_csv(here('data/boat.csv'),
                   show_col_types = FALSE)
 ```
 
+:::{.column-page}
 ```{r}
 #| label: table
+boat_n <- boat |> 
+  mutate(
+    name = replace_na(name, 'name'),
+    tag = replace_na(tag, 'tag'),
+    boat = replace_na(boat, 'boat')
+  ) |> 
+  slice(1)
+
 boat |> 
+  slice(-1) |> 
+  set_names(nm = boat_n) |> 
   gt() |>
-  text_transform(
-    locations = cells_body(rows = 1),
-    fn = function(x) if (!is.na(x)) web_image(x) else ''
+  cols_label(
+    boat = ''
+  ) |> 
+  cols_label_with(columns = -c(name, tag, boat),
+                  fn = function(x) gtExtras::img_header('', x, palette = c('#00000000', '#00000000'), height = 30)) |>
+  sub_missing() |> 
+  data_color(
+    rows = 1:20, palette = '#4C956C'
   ) |> 
   opt_table_font(
     font = google_font('Martel Sans')
+  ) |> 
+  tab_options(
+    data_row.padding = px(.2)
   )
 ```
-
-
+:::

@@ -30,8 +30,7 @@ cards |>
     font = google_font('Martel Sans')
   ) |> 
   opt_interactive(
-    use_compact_mode = TRUE,
-    page_size_default = 50
+    use_compact_mode = TRUE
   )
 ```
 :::
