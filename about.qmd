@@ -3,3 +3,6 @@ title: "About"
 ---
 
 This is a dashboard for the Legend Dynasty! clan in Clash Royale, built in [Quarto](https://quarto.org/) using the [`royale` R package](https://github.com/christopherkenny/royale).
+
+
+**This content is not affiliated with, endorsed, sponsored, or specifically approved by Supercell and Supercell is not responsible for it. For more information see Supercell’s Fan Content Policy: <www.supercell.com/fan-content-policy>.**
