@@ -1,6 +1,7 @@
 ---
 title: "Boat Defense"
 date: last-modified
+published-title: "Last Updated"
 execute: 
   echo: false
 ---
@@ -37,7 +38,7 @@ boat |>
     boat = ''
   ) |> 
   cols_label_with(columns = -c(name, tag, boat),
-                  fn = function(x) gtExtras::img_header('', x, palette = c('#00000000', '#00000000'), height = 30)) |>
+                  fn = function(x) html(web_image(x))) |>
   sub_missing() |> 
   data_color(
     rows = 1:20, palette = '#4C956C'

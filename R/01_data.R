@@ -22,7 +22,8 @@ players <- players |>
     elite = map_int(cards, \(x) sum(x$max_level - x$level < 0)),
   )
 
-# TODO write players to csv
+players |> 
+  write_csv('data/players.csv')
 
 ## war ----
 war <- cr_get_riverrace_current(clan = clan_tag)
