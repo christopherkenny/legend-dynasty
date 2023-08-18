@@ -13,7 +13,7 @@ players <- lapply(clan$player_tag, function(tag){
   list_rbind()
 
 players <- players |> 
-  mutate(
+  mutate( # cards at least this level
     bronze = map_int(cards, \(x) sum(x$max_level - x$level <= 4)),
     silver = map_int(cards, \(x) sum(x$max_level - x$level <= 3)),
     gold = map_int(cards, \(x) sum(x$max_level - x$level <= 2)),
@@ -47,6 +47,7 @@ war_sheet <- left_join(
   relocate(fame_11, .after = everything()) #|> # maybe 
 #mutate(across(starts_with('fame'), replace_na, 0))
 war_sheet
+# get seasons can be used to back out column titles
 
 # TODO: write war to csv
 
