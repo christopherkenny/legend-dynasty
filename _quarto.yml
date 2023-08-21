@@ -3,6 +3,7 @@ project:
 
 website:
   title: "LeGeND Dynasty"
+  favicon: "legend-family-icon.png"
   navbar:
     left:
       - href: index.qmd

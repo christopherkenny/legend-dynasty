@@ -1,0 +1,13 @@
+---
+title: "War"
+date: now
+published-title: "Last Updated"
+execute: 
+  echo: false
+---
+
+```{r}
+#| label: setup
+suppressPackageStartupMessages({library(here)})
+source(here('R/00_setup.R'))
+```

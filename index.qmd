@@ -1,6 +1,6 @@
 ---
 title: "Activity"
-date: last-modified
+date: now
 execute: 
   echo: false
 ---

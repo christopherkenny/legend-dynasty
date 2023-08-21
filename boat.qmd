@@ -1,6 +1,6 @@
 ---
 title: "Boat Defense"
-date: last-modified
+date: now
 published-title: "Last Updated"
 execute: 
   echo: false
