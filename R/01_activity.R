@@ -1,3 +1,4 @@
+source(here::here('R/00_setup.R'))
 
 # testing
 me <- players |> slice(1)
