@@ -31,23 +31,31 @@ past_war <- cr_get_riverrace_log(clan = clan_tag)
 
 clan_war <- war$clan[[1]] 
 
-war_sheet <- left_join(
+war_sheet <- full_join(
+  past_war |> 
+    mutate(week = row_number())  |> 
+    unnest_longer(standings) |> 
+    unnest_wider(standings) |> 
+    unnest(clan) |> unnest(clan) |> 
+    filter(.data$clan_tag == paste0('#', .env$clan_tag)) |> 
+    rename(tag = clan_participants_tag) |> 
+    select(season_id, week, tag, fame = clan_participants_fame) |> 
+    arrange(season_id, week) |> 
+    pivot_wider(id_cols = tag, values_from = fame, names_from = c(season_id, week), 
+                names_glue = 'fame_{season_id}-{str_pad(week, 2, pad = 0)}'),
   war$clan[[1]] |> 
     select(name = clan_participants_name, tag = clan_participants_tag, 
            fame_11 = clan_participants_fame),
-  bind_rows(past_war$standings, .id = 'week') |> 
-    tidyr::unnest(clan) |> 
-    filter(.data$clan_tag == paste0('#', .env$clan_tag)) |> 
-    rename(tag = clan_participants_tag) |> 
-    select(week, tag, fame = clan_participants_fame) |> 
-    pivot_wider(id_cols = tag, values_from = fame, names_from = week, 
-                names_glue = '{str_pad(.value, 2)}_{str_pad(week, 2, pad = 0)}'),
+
   by = 'tag'
 ) |> 
   relocate(fame_11, .after = everything()) #|> # maybe 
 #mutate(across(starts_with('fame'), replace_na, 0))
 war_sheet
 # get seasons can be used to back out column titles
+cr_get_global_seasons() |> 
+  tail(11) |> 
+  pull(id)
 
 # TODO: write war to csv
 
