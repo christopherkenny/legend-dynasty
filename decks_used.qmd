@@ -1,0 +1,40 @@
+---
+title: "Decks Used"
+date: now
+published-title: "Last Updated"
+execute: 
+  echo: false
+---
+
+```{r}
+#| label: setup
+suppressPackageStartupMessages({library(here)})
+source(here('R/00_setup.R'))
+```
+
+
+```{r}
+#| label: table
+decks_used <- read_csv(here('data/decks_used.csv'), 
+                  #col_types = cols(.default = col_character()),
+                  show_col_types = FALSE)
+```
+
+:::{.column-page}
+```{r}
+decks_used |> 
+  rowwise() |> 
+  mutate(order = sum(c_across(starts_with('decks_used_')))) |> 
+  ungroup() |> 
+  arrange(desc(order)) |> 
+  gt() |>
+  cols_label_with(fn = function(x) str_remove(x, 'decks_used_')) |> 
+  cols_hide(order) |> 
+  opt_table_font(
+    font = google_font('Martel Sans')
+  ) |> 
+  opt_interactive(
+    use_compact_mode = TRUE
+  )
+```
+:::

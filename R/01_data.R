@@ -29,37 +29,81 @@ players |>
 war <- cr_get_riverrace_current(clan = clan_tag)
 past_war <- cr_get_riverrace_log(clan = clan_tag)
 
-clan_war <- war$clan[[1]] 
+clan_war <- war |> unnest(clan)
 
 war_sheet <- full_join(
   past_war |> 
     group_by(season_id) |> 
-    mutate(week = rev(row_number()))  |> 
+    mutate(week = section_index + 1)  |> 
     ungroup() |> 
     unnest_longer(standings) |> 
     unnest_wider(standings) |> 
     unnest(clan) |> unnest(clan) |> 
     filter(.data$clan_tag == paste0('#', .env$clan_tag)) |> 
-    rename(tag = clan_participants_tag) |> 
-    select(season_id, week, tag, fame = clan_participants_fame) |> 
+    rename(
+      tag = clan_participants_tag,
+      name = clan_participants_name
+    ) |> 
+    select(season_id, week, name, tag, fame = clan_participants_fame) |> 
     arrange(season_id, week) |> 
-    pivot_wider(id_cols = tag, values_from = fame, names_from = c(season_id, week), 
+    pivot_wider(id_cols = c(name, tag), values_from = fame, names_from = c(season_id, week), 
                 names_glue = 'fame_{season_id}-{str_pad(week, 2, pad = 0)}'),
-  war$clan[[1]] |> 
+  war |> 
+    unnest(clan) |> 
     select(name = clan_participants_name, tag = clan_participants_tag, 
            fame_11 = clan_participants_fame),
 
-  by = 'tag'
+  by = c('tag', 'name')
 ) |> 
   relocate(fame_11, .after = everything())
 
-# TODO: get seasons can be used to back out column titles
-cr_get_seasons() |> 
-  tail(11)
+# back out current war and week
+curr_week <- {clan_war |> 
+  pull(section_index) |> 
+  pluck(1)} + 1
+curr_war <- ifelse(curr_week == 1, str_extract(names(war_sheet), '\\d+')[12] + 1, str_extract(names(war_sheet), '\\d+')[12])
+
+# rename fame_11
+names(war_sheet)[which(names(war_sheet) == 'fame_11')] <- str_glue('fame_{curr_war}-{curr_week}')
 
 # write war to csv
 war_sheet |> 
   write_csv('data/war.csv')
+
+
+# Decks Used ----
+
+decks_used <- full_join(
+  past_war |> 
+    group_by(season_id) |> 
+    mutate(week = section_index + 1)  |> 
+    ungroup() |> 
+    unnest_longer(standings) |> 
+    unnest_wider(standings) |> 
+    unnest(clan) |> unnest(clan) |> 
+    filter(.data$clan_tag == paste0('#', .env$clan_tag)) |> 
+    rename(
+      tag = clan_participants_tag,
+      name = clan_participants_name
+    ) |> 
+    select(season_id, week, name, tag, decks_used = clan_participants_decks_used) |> 
+    arrange(season_id, week) |> 
+    pivot_wider(id_cols = c(name, tag), values_from = decks_used, names_from = c(season_id, week), 
+                names_glue = 'decks_used_{season_id}-{str_pad(week, 2, pad = 0)}'),
+  war |> 
+    unnest(clan) |>
+    select(name = clan_participants_name, tag = clan_participants_tag, 
+           decks_used_11 = clan_participants_fame),
+  by = c('name', 'tag')
+) |> 
+  relocate(decks_used_11, .after = everything())
+
+# rename decks_used_11
+names(decks_used)[which(names(decks_used) == 'decks_used_11')] <- str_glue('decks_used_{curr_war}-{curr_week}')
+
+# write decks used to csv
+decks_used |> 
+  write_csv('data/decks_used.csv')
 
 ## cards ---
 cards <- players |> 
