@@ -12,4 +12,29 @@ suppressPackageStartupMessages({library(here)})
 source(here('R/00_setup.R'))
 ```
 
-# use setnames
+
+```{r}
+#| label: table
+war <- read_csv(here('data/war.csv'), 
+                  #col_types = cols(.default = col_character()),
+                  show_col_types = FALSE)
+```
+
+:::{.column-page}
+```{r}
+war |> 
+  rowwise() |> 
+  mutate(order = sum(c_across(starts_with('fame_')))) |> 
+  ungroup() |> 
+  arrange(desc(order)) |> 
+  gt() |>
+  cols_label_with(fn = function(x) str_remove(x, 'fame_')) |> 
+  cols_hide(order) |> 
+  opt_table_font(
+    font = google_font('Martel Sans')
+  ) |> 
+  opt_interactive(
+    use_compact_mode = TRUE
+  )
+```
+:::
