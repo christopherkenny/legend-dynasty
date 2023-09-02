@@ -33,7 +33,9 @@ clan_war <- war$clan[[1]]
 
 war_sheet <- full_join(
   past_war |> 
-    mutate(week = row_number())  |> 
+    group_by(season_id) |> 
+    mutate(week = rev(row_number()))  |> 
+    ungroup() |> 
     unnest_longer(standings) |> 
     unnest_wider(standings) |> 
     unnest(clan) |> unnest(clan) |> 
@@ -49,15 +51,15 @@ war_sheet <- full_join(
 
   by = 'tag'
 ) |> 
-  relocate(fame_11, .after = everything()) #|> # maybe 
-#mutate(across(starts_with('fame'), replace_na, 0))
-war_sheet
-# get seasons can be used to back out column titles
-cr_get_global_seasons() |> 
-  tail(11) |> 
-  pull(id)
+  relocate(fame_11, .after = everything())
 
-# TODO: write war to csv
+# TODO: get seasons can be used to back out column titles
+cr_get_seasons() |> 
+  tail(11)
+
+# write war to csv
+war_sheet |> 
+  write_csv('data/war.csv')
 
 ## cards ---
 cards <- players |> 
