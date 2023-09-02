@@ -1,5 +1,6 @@
 project:
   type: website
+  pre-render: "R/01_data.R"
 
 website:
   title: "LeGeND Dynasty"
@@ -12,6 +13,10 @@ website:
         text: "Boat Defense"
       - href: cards.qmd
         text: Cards
+      - href: war.qmd
+        text: "War"
+      - href: decks_used.qmd
+        text: "Decks Used"
       - about.qmd
 
 
