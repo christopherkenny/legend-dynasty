@@ -13,28 +13,41 @@ source(here('R/00_setup.R'))
 
 ```{r}
 #| label: clan
-clan <- cr_get_clan(clan = clan_tag) 
+clan <- read_csv(here('data/clan.csv'), 
+                 #col_types = cols(.default = col_character()),
+                 show_col_types = FALSE)
 ```
 
 ```{r}
 #| label: players
-players <- lapply(clan$player_tag, function(tag){
-  out <- NULL
-  try(out <- cr_get_player(tag = tag))
-  out
-}) |> 
-  list_rbind()
-
-players <- players |> 
-  mutate(
-    bronze = map_int(cards, \(x) sum(x$max_level - x$level <= 4)),
-    silver = map_int(cards, \(x) sum(x$max_level - x$level <= 3)),
-    gold = map_int(cards, \(x) sum(x$max_level - x$level <= 2)),
-    legendary = map_int(cards, \(x) sum(x$max_level - x$level <= 1)),
-    maxed = map_int(cards, \(x) sum(x$max_level - x$level <= 0)),
-    elite = map_int(cards, \(x) sum(x$max_level - x$level < 0)),
-  )
+players <- read_csv(here('data/players.csv'), 
+                  #col_types = cols(.default = col_character()),
+                  show_col_types = FALSE)
 ```
+
+```{r}
+#| label: decks_used
+decks_used <- read_csv(here('data/decks_used.csv'), 
+                  #col_types = cols(.default = col_character()),
+                  show_col_types = FALSE)
+deck_keep <- max(str_extract(names(decks_used), '\\d+'), na.rm = TRUE)
+
+decks_used <- decks_used |> 
+  select(tag, matches(deck_keep))
+```
+
+```{r}
+#| label: war
+war <- read_csv(here('data/war.csv'), 
+                  #col_types = cols(.default = col_character()),
+                  show_col_types = FALSE)
+
+war_keep <- max(str_extract(names(war), '\\d+'), na.rm = TRUE)
+
+war <- war |> 
+  select(tag, matches(war_keep))
+```
+
 
 :::{.column-page}
 ```{r}
@@ -53,10 +66,20 @@ clan |>
     players |> select(tag, war_day_wins, elite, maxed, legendary, gold, silver, bronze),
     by = 'tag'
   ) |> 
+  left_join(
+    war, 
+    by = 'tag'
+  ) |> 
+  left_join(
+    decks_used, 
+    by = 'tag'
+  ) |> 
   gt() |> 
   tab_spanner(label = 'Player', columns = c(name, tag)) |> 
   tab_spanner(label = 'Donations', columns = starts_with('donations')) |> 
   tab_spanner(label = 'Card Levels', columns = c(elite, maxed, legendary, gold, silver, bronze)) |> 
+  tab_spanner(label = 'War', columns = starts_with('fame_')) |> 
+  tab_spanner(label = 'Decks Used', columns = starts_with('decks_used_')) |> 
   cols_label(
     name = 'Name',
     tag = 'Tag',
@@ -73,6 +96,7 @@ clan |>
     silver = 'S',
     bronze = 'B'
   ) |> 
+  cols_label_with(fn = function(x) x |> str_remove('fame_') |> str_remove('decks_used_')) |> 
   cols_hide(last_seen_flag) |> 
   data_color(
     columns = trophies,
@@ -84,10 +108,10 @@ clan |>
   ) |> 
   data_color(
     columns = donations,
-    fn = scales::col_numeric(
+    fn = function(x) scales::col_numeric(
       palette = c('#FFFFFFFF', '#b7e1cd'),
       domain = c(0, 200)
-    )
+    )(scales::oob_squish(x, c(0, 200)))
   ) |> 
   data_color(
     columns = last_seen_flag,

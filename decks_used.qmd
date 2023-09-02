@@ -14,7 +14,7 @@ source(here('R/00_setup.R'))
 
 
 ```{r}
-#| label: table
+#| label: decks_used
 decks_used <- read_csv(here('data/decks_used.csv'), 
                   #col_types = cols(.default = col_character()),
                   show_col_types = FALSE)
