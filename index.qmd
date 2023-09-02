@@ -34,6 +34,13 @@ deck_keep <- max(str_extract(names(decks_used), '\\d+'), na.rm = TRUE)
 
 decks_used <- decks_used |> 
   select(tag, matches(deck_keep))
+
+decks_used <- decks_used |>
+  rowwise() |> 
+  mutate(
+    total_decks_used = sum(c_across(starts_with('decks_used_')))
+  ) |> 
+  ungroup()
 ```
 
 ```{r}
@@ -46,6 +53,14 @@ war_keep <- max(str_extract(names(war), '\\d+'), na.rm = TRUE)
 
 war <- war |> 
   select(tag, matches(war_keep))
+
+war <- war |>
+  rowwise() |> 
+  mutate(
+    total_fame = sum(c_across(starts_with('fame_'))),
+    avg_fame = as.integer(mean(replace_na(c_across(starts_with('fame_'))), 0))
+  ) |> 
+  ungroup()
 ```
 
 
