@@ -20,7 +20,7 @@ war <- read_csv(here('data/war.csv'),
                   show_col_types = FALSE)
 ```
 
-:::{.column-page}
+:::{.column-screen}
 ```{r}
 war |> 
   rowwise() |> 

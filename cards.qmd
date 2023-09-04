@@ -19,7 +19,7 @@ cards <- read_csv(here('data/cards.csv'),
                   show_col_types = FALSE)
 ```
 
-:::{.column-page}
+:::{.column-screen}
 ```{r}
 cards |> 
   gt() |>

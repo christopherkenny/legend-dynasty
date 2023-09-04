@@ -20,7 +20,7 @@ decks_used <- read_csv(here('data/decks_used.csv'),
                   show_col_types = FALSE)
 ```
 
-:::{.column-page}
+:::{.column-screen}
 ```{r}
 decks_used |> 
   rowwise() |> 

@@ -64,7 +64,7 @@ war <- war |>
 ```
 
 
-:::{.column-page}
+:::{.column-screen}
 ```{r}
 #| label: table
 #| warning: false
@@ -93,8 +93,8 @@ clan |>
   tab_spanner(label = 'Player', columns = c(name, tag)) |> 
   tab_spanner(label = 'Donations', columns = starts_with('donations')) |> 
   tab_spanner(label = 'Card Levels', columns = c(elite, maxed, legendary, gold, silver, bronze)) |> 
-  tab_spanner(label = 'War', columns = starts_with('fame_')) |> 
-  tab_spanner(label = 'Decks Used', columns = starts_with('decks_used_')) |> 
+  tab_spanner(label = 'War', columns = c(starts_with('fame_'), ends_with('_fame'))) |> 
+  tab_spanner(label = 'Decks Used', columns = c(starts_with('decks_used_'), ends_with('_decks_used'))) |> 
   cols_label(
     name = 'Name',
     tag = 'Tag',
@@ -109,10 +109,15 @@ clan |>
     legendary = 'L',
     gold = 'G',
     silver = 'S',
-    bronze = 'B'
+    bronze = 'B',
+    total_fame = 'Tot.',
+    avg_fame = 'Avg.',
+    total_decks_used = 'Tot.'
   ) |> 
   cols_label_with(fn = function(x) x |> str_remove('fame_') |> str_remove('decks_used_')) |> 
   cols_hide(last_seen_flag) |> 
+  fmt_number(columns = contains(c('fame', 'decks_used')), decimals = 0) |> 
+  sub_missing(columns = contains(c('fame', 'decks_used'))) |> 
   data_color(
     columns = trophies,
     fn = scales::col_numeric(
