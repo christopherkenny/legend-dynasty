@@ -1,4 +1,8 @@
 source(here::here('R/00_setup.R'))
+if (Sys.getenv('username') != 'chris') {
+  options(royale.use_proxy = TRUE)
+}
+
 # prep data ----
 
 ## clan ----
@@ -64,7 +68,7 @@ war_sheet <- full_join(
 curr_week <- {clan_war |> 
   pull(section_index) |> 
   pluck(1)} + 1
-curr_war <- str_pad(ifelse(curr_week == 1, str_extract(names(war_sheet), '\\d+')[12] + 1, str_extract(names(war_sheet), '\\d+')[12]), 2, pad = 0)
+curr_war <- str_pad(ifelse(curr_week == 1, as.integer(str_extract(names(war_sheet), '\\d+')[12]) + 1, str_extract(names(war_sheet), '\\d+')[12]), 2, pad = 0)
 
 # rename fame_11
 names(war_sheet)[which(names(war_sheet) == 'fame_11')] <- str_glue('fame_{curr_war}-{curr_week}')
