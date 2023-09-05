@@ -1,6 +1,7 @@
 ---
 title: "Activity"
 date: now
+date-format: "dddd, MMMM D, YYYY [at] HH:mmZZ"
 execute: 
   echo: false
 ---
@@ -21,16 +22,16 @@ clan <- read_csv(here('data/clan.csv'),
 ```{r}
 #| label: players
 players <- read_csv(here('data/players.csv'), 
-                  #col_types = cols(.default = col_character()),
-                  show_col_types = FALSE)
+                    #col_types = cols(.default = col_character()),
+                    show_col_types = FALSE)
 ```
 
 ```{r}
 #| label: decks_used
 decks_used <- read_csv(here('data/decks_used.csv'), 
-                  #col_types = cols(.default = col_character()),
-                  show_col_types = FALSE)
-deck_keep <- max(str_extract(names(decks_used), '\\d+'), na.rm = TRUE)
+                       #col_types = cols(.default = col_character()),
+                       show_col_types = FALSE)
+deck_keep <- as.character(max(as.integer(str_extract(names(decks_used), '\\d+')), na.rm = TRUE))
 
 decks_used <- decks_used |> 
   select(tag, matches(deck_keep))
@@ -38,7 +39,7 @@ decks_used <- decks_used |>
 decks_used <- decks_used |>
   rowwise() |> 
   mutate(
-    total_decks_used = sum(c_across(starts_with('decks_used_')))
+    total_decks_used = sum(c_across(starts_with('decks_used_')), na.rm = TRUE)
   ) |> 
   ungroup()
 ```
@@ -46,10 +47,10 @@ decks_used <- decks_used |>
 ```{r}
 #| label: war
 war <- read_csv(here('data/war.csv'), 
-                  #col_types = cols(.default = col_character()),
-                  show_col_types = FALSE)
+                #col_types = cols(.default = col_character()),
+                show_col_types = FALSE)
 
-war_keep <- max(str_extract(names(war), '\\d+'), na.rm = TRUE)
+war_keep <- as.character(max(as.integer(str_extract(names(war), '\\d+')), na.rm = TRUE))
 
 war <- war |> 
   select(tag, matches(war_keep))
@@ -57,10 +58,20 @@ war <- war |>
 war <- war |>
   rowwise() |> 
   mutate(
-    total_fame = sum(c_across(starts_with('fame_'))),
-    avg_fame = as.integer(mean(replace_na(c_across(starts_with('fame_'))), 0))
+    total_fame = sum(c_across(starts_with('fame_')), na.rm = TRUE),
+    avg_fame = as.integer(mean(c_across(starts_with('fame_')), na.rm = TRUE))
   ) |> 
   ungroup()
+```
+
+```{r}
+#| label: constants
+trophies_target <- 7000
+trophies_min <- 5600
+donations_target <- 200
+donations_received_target <- 200
+fame_target <- 2000
+max_cards <- 109
 ```
 
 
@@ -74,7 +85,7 @@ clan |>
   select(-exp_level, -clan_rank, -previous_clan_rank, -starts_with('arena'), -clan_chest_points) |> 
   mutate(
     last_seen_flag = time_min(last_seen) > (48 * 60),
-    last_seen = time_short(last_seen)
+    last_seen = time_short(last_seen) 
   ) |> 
   relocate(name, tag, last_seen, role, trophies, starts_with('donations')) |> 
   left_join(
@@ -89,6 +100,19 @@ clan |>
     decks_used, 
     by = 'tag'
   ) |> 
+  mutate(
+    activity = 0.3 * (pmax(trophies - trophies_min, 0) / (trophies_target - trophies_min)) + 
+      0.4 * (donations / donations_target) + 
+      0.2 * (donations_received / donations_received_target) + 
+      0.1 * (pmax(avg_fame - fame_target, 0) / fame_target),
+    rating = ifelse(trophies > trophies_min, 2500, 2500 * (pmax(trophies  - 4300, 0) / (trophies_min - 4300))) + 
+      15 * donations - 2 * donations_received + 
+      20 * elite + 15 * (maxed - elite) +  12 * (legendary - maxed) + 10 * (gold - legendary) + 
+      8 * (silver - gold) + 5 * (silver - bronze) + 
+      50 * pmax(total_decks_used, 16) + avg_fame
+  ) |>
+  relocate(activity, .after = avg_fame) |> 
+  arrange(desc(activity)) |> 
   gt() |> 
   tab_spanner(label = 'Player', columns = c(name, tag)) |> 
   tab_spanner(label = 'Donations', columns = starts_with('donations')) |> 
@@ -112,12 +136,17 @@ clan |>
     bronze = 'B',
     total_fame = 'Tot.',
     avg_fame = 'Avg.',
-    total_decks_used = 'Tot.'
+    total_decks_used = 'Tot.',
+    activity = 'Activity',
+    rating = 'Rating'
   ) |> 
   cols_label_with(fn = function(x) x |> str_remove('fame_') |> str_remove('decks_used_')) |> 
   cols_hide(last_seen_flag) |> 
   fmt_number(columns = contains(c('fame', 'decks_used')), decimals = 0) |> 
+  fmt_number(columns = rating, decimals = 0) |> 
+  fmt_percent(activity, decimals = 0) |> 
   sub_missing(columns = contains(c('fame', 'decks_used'))) |> 
+  sub_missing(columns = c(activity, rating)) |> 
   data_color(
     columns = trophies,
     fn = scales::col_numeric(
@@ -139,6 +168,59 @@ clan |>
     method = 'factor',
     palette = c('#FFFFFFFF', '#982649')
   ) |> 
+  # cards
+  data_color(
+    columns = elite,
+    fn = scales::col_numeric(
+      palette = c('white', '#375CAD'), na.color = 'white', domain = c(0, max_cards)
+    )
+  ) |> 
+  data_color(
+    columns = maxed,
+    fn = scales::col_numeric(
+      palette = c('white', '#F9CB9C'), na.color = 'white', domain = c(0, max_cards)
+    )
+  ) |> 
+  data_color(
+    columns = legendary,
+    fn = scales::col_numeric(
+      palette = c('white', '#8e7cc3'), na.color = 'white', domain = c(0, max_cards)
+    )
+  ) |> 
+  data_color(
+    columns = gold,
+    fn = scales::col_numeric(
+      palette = c('white', '#f4d91b'), na.color = 'white', domain = c(0, max_cards)
+    )
+  ) |> 
+  data_color(
+    columns = silver,
+    fn = scales::col_numeric(
+      palette = c('white', '#999999'), na.color = 'white', domain = c(0, max_cards)
+    )
+  ) |> 
+  data_color(
+    columns = bronze,
+    fn = scales::col_numeric(
+      palette = c('white', '#7f6000'), na.color = 'white', domain = c(0, max_cards)
+    )
+  ) |> 
+  data_color(
+    columns = activity,
+    fn = function(x) scales::col_numeric(
+      palette = c('#FFFFFFFF', '#b7e1cd'),
+      domain = c(0, 1),
+      na.color = '#D48792'
+    )(scales::oob_squish(x, c(0, 100)))
+  ) |> 
+  data_color(
+    columns = starts_with('decks_used_'),
+    fn = function(x) scales::col_numeric(
+      palette = c('#FFFFFFFF', '#A2D6F9'),
+      domain = c(0, 16),
+      na.color = '#D48792'
+    )(scales::oob_squish(x, c(0, 16)))
+  ) |> 
   opt_table_font(
     font = google_font('Martel Sans')
   )
@@ -146,6 +228,35 @@ clan |>
 ```
 :::
 
+
+LeGeND Dynasty! uses a rating system to assess participation. 
+Activity scores are calculated as follows:
+
+| Category | Amount | Weight | 
+|:---------|-------:|-------:|
+| Donations | `r donations_target` | 40% |
+| Donations Received | `r donations_received_target` | 20% |
+| War Fame per Week | `r fame_target` | 30% |
+| Target Trophies | `r trophies_target` | 10%|
+| Minimum Trophies | `r trophies_min` | 0%|
+
+Ratings are calculated as:
+
+| Category  | Details           | Points  |
+|:----------|:-----------------:| -------:|
+| Trophies  | >=5600            | 2500    |
+| Trophies  | 4300 - 5600       | 0 - 2500|
+| Trophies  | <4300             | 0       |
+| Donations | Given             | 15      | 
+| Donations | Received          | -2      |
+| War       | Average Fame      | 1       |
+| War       | Total Decks Used (up to 16)  | 50 | 
+| Cards     | Elite             | 20      |
+| Cards     | Maxed             | 15      |
+| Cards     | Legendary         | 12      |
+| Cards     | Gold              | 10      |
+| Cards     | Silver            | 8       |
+| Cards     | Bronze            | 5       |
 
 
 
