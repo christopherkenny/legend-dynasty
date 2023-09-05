@@ -32,7 +32,13 @@ jobs:
             any::knitr
             any::rmarkdown
             any::here
-            any::tidyverse
+            any::readr
+            any::dplyr
+            any::tidyr
+            any::lubridate
+            any::purrr
+            any::tibble
+            any::stringr
             any::gt
             any::fs
             any::scales
