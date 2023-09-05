@@ -1,1 +1,1 @@
-Sitemap: https://github.com/christopherkenny/legend-dynasty/sitemap.xml
+Sitemap: https://legenddynasty.dev/sitemap.xml
