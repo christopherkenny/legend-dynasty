@@ -20,6 +20,17 @@ jobs:
           # version: SPECIFIC-QUARTO-VERSION-HERE
       
       # add software dependencies here
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: 'release'
+          packages:
+            any::knitr
+            any::rmarkdown
+            any::here
+            any::tidyverse
+            any::fs
+            any::scales
+            github::christopherkenny/royale
 
       - name: Publish to GitHub Pages (and render)
         uses: quarto-dev/quarto-actions/publish@v2
