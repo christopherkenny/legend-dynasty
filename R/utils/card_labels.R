@@ -6,6 +6,7 @@ card_labels <- tibble::tribble(
   'Skeleton King',     'SkelKing', 
   'Mighty Miner',      'MiMiner',
   'Monk',              'Monk',
+  'Little Prince',     'LilPrince',
   
   # legendary
   'Princess',          'Princess', 
