@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -49,7 +49,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -58,12 +64,12 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
 }</script>
-
 <script src="site_libs/core-js-2.5.3/shim.min.js"></script>
 <script src="site_libs/react-18.2.0/react.min.js"></script>
 <script src="site_libs/react-18.2.0/react-dom.min.js"></script>
@@ -80,9 +86,9 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">LeGeND Dynasty</span>
     </a>
@@ -94,34 +100,34 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html" rel="" target="">
- <span class="menu-text">Activity</span></a>
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Activity</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./boat.html" rel="" target="">
- <span class="menu-text">Boat Defense</span></a>
+    <a class="nav-link" href="./boat.html"> 
+<span class="menu-text">Boat Defense</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./cards.html" rel="" target="">
- <span class="menu-text">Cards</span></a>
+    <a class="nav-link" href="./cards.html"> 
+<span class="menu-text">Cards</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./war.html" rel="" target="" aria-current="page">
- <span class="menu-text">War</span></a>
+    <a class="nav-link active" href="./war.html" aria-current="page"> 
+<span class="menu-text">War</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./decks_used.html" rel="" target="">
- <span class="menu-text">Decks Used</span></a>
+    <a class="nav-link" href="./decks_used.html"> 
+<span class="menu-text">Decks Used</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
- <span class="menu-text">About</span></a>
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools ms-auto">
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
-          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -156,30 +162,31 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
+
 
 <div class="column-screen">
 <div class="cell">
 <div class="cell-output-display">
-
-<div id="vcffqyrcqc" class=".gt_table" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="uqksjtbinb" class=".gt_table" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>@import url("https://fonts.googleapis.com/css2?family=Martel+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-#vcffqyrcqc table {
+#uqksjtbinb table {
   font-family: 'Martel Sans', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#vcffqyrcqc thead, #vcffqyrcqc tbody, #vcffqyrcqc tfoot, #vcffqyrcqc tr, #vcffqyrcqc td, #vcffqyrcqc th {
+#uqksjtbinb thead, #uqksjtbinb tbody, #uqksjtbinb tfoot, #uqksjtbinb tr, #uqksjtbinb td, #uqksjtbinb th {
   border-style: none;
 }
 
-#vcffqyrcqc p {
+#uqksjtbinb p {
   margin: 0;
   padding: 0;
 }
 
-#vcffqyrcqc .gt_table {
+#uqksjtbinb .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -205,12 +212,12 @@ ul.task-list li input[type="checkbox"] {
   border-left-color: #D3D3D3;
 }
 
-#vcffqyrcqc .gt_caption {
+#uqksjtbinb .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#vcffqyrcqc .gt_title {
+#uqksjtbinb .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -222,7 +229,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-width: 0;
 }
 
-#vcffqyrcqc .gt_subtitle {
+#uqksjtbinb .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -234,7 +241,7 @@ ul.task-list li input[type="checkbox"] {
   border-top-width: 0;
 }
 
-#vcffqyrcqc .gt_heading {
+#uqksjtbinb .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -246,13 +253,13 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#vcffqyrcqc .gt_bottom_border {
+#uqksjtbinb .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#vcffqyrcqc .gt_col_headings {
+#uqksjtbinb .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -267,7 +274,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#vcffqyrcqc .gt_col_heading {
+#uqksjtbinb .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -287,7 +294,7 @@ ul.task-list li input[type="checkbox"] {
   overflow-x: hidden;
 }
 
-#vcffqyrcqc .gt_column_spanner_outer {
+#uqksjtbinb .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -299,15 +306,15 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 4px;
 }
 
-#vcffqyrcqc .gt_column_spanner_outer:first-child {
+#uqksjtbinb .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#vcffqyrcqc .gt_column_spanner_outer:last-child {
+#uqksjtbinb .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#vcffqyrcqc .gt_column_spanner {
+#uqksjtbinb .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -319,11 +326,11 @@ ul.task-list li input[type="checkbox"] {
   width: 100%;
 }
 
-#vcffqyrcqc .gt_spanner_row {
+#uqksjtbinb .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#vcffqyrcqc .gt_group_heading {
+#uqksjtbinb .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -349,7 +356,7 @@ ul.task-list li input[type="checkbox"] {
   text-align: left;
 }
 
-#vcffqyrcqc .gt_empty_group_heading {
+#uqksjtbinb .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -364,15 +371,15 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 
-#vcffqyrcqc .gt_from_md > :first-child {
+#uqksjtbinb .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#vcffqyrcqc .gt_from_md > :last-child {
+#uqksjtbinb .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#vcffqyrcqc .gt_row {
+#uqksjtbinb .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -391,7 +398,7 @@ ul.task-list li input[type="checkbox"] {
   overflow-x: hidden;
 }
 
-#vcffqyrcqc .gt_stub {
+#uqksjtbinb .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -404,7 +411,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#vcffqyrcqc .gt_stub_row_group {
+#uqksjtbinb .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -418,15 +425,15 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: top;
 }
 
-#vcffqyrcqc .gt_row_group_first td {
+#uqksjtbinb .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#vcffqyrcqc .gt_row_group_first th {
+#uqksjtbinb .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#vcffqyrcqc .gt_summary_row {
+#uqksjtbinb .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -436,16 +443,16 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#vcffqyrcqc .gt_first_summary_row {
+#uqksjtbinb .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#vcffqyrcqc .gt_first_summary_row.thick {
+#uqksjtbinb .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#vcffqyrcqc .gt_last_summary_row {
+#uqksjtbinb .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -455,7 +462,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#vcffqyrcqc .gt_grand_summary_row {
+#uqksjtbinb .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -465,7 +472,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#vcffqyrcqc .gt_first_grand_summary_row {
+#uqksjtbinb .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -475,7 +482,7 @@ ul.task-list li input[type="checkbox"] {
   border-top-color: #D3D3D3;
 }
 
-#vcffqyrcqc .gt_last_grand_summary_row_top {
+#uqksjtbinb .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -485,11 +492,11 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#vcffqyrcqc .gt_striped {
+#uqksjtbinb .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#vcffqyrcqc .gt_table_body {
+#uqksjtbinb .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -498,7 +505,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#vcffqyrcqc .gt_footnotes {
+#uqksjtbinb .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -512,7 +519,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#vcffqyrcqc .gt_footnote {
+#uqksjtbinb .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -521,7 +528,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#vcffqyrcqc .gt_sourcenotes {
+#uqksjtbinb .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -535,7 +542,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#vcffqyrcqc .gt_sourcenote {
+#uqksjtbinb .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -543,68 +550,68 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#vcffqyrcqc .gt_left {
+#uqksjtbinb .gt_left {
   text-align: left;
 }
 
-#vcffqyrcqc .gt_center {
+#uqksjtbinb .gt_center {
   text-align: center;
 }
 
-#vcffqyrcqc .gt_right {
+#uqksjtbinb .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#vcffqyrcqc .gt_font_normal {
+#uqksjtbinb .gt_font_normal {
   font-weight: normal;
 }
 
-#vcffqyrcqc .gt_font_bold {
+#uqksjtbinb .gt_font_bold {
   font-weight: bold;
 }
 
-#vcffqyrcqc .gt_font_italic {
+#uqksjtbinb .gt_font_italic {
   font-style: italic;
 }
 
-#vcffqyrcqc .gt_super {
+#uqksjtbinb .gt_super {
   font-size: 65%;
 }
 
-#vcffqyrcqc .gt_footnote_marks {
+#uqksjtbinb .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#vcffqyrcqc .gt_asterisk {
+#uqksjtbinb .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#vcffqyrcqc .gt_indent_1 {
+#uqksjtbinb .gt_indent_1 {
   text-indent: 5px;
 }
 
-#vcffqyrcqc .gt_indent_2 {
+#uqksjtbinb .gt_indent_2 {
   text-indent: 10px;
 }
 
-#vcffqyrcqc .gt_indent_3 {
+#uqksjtbinb .gt_indent_3 {
   text-indent: 15px;
 }
 
-#vcffqyrcqc .gt_indent_4 {
+#uqksjtbinb .gt_indent_4 {
   text-indent: 20px;
 }
 
-#vcffqyrcqc .gt_indent_5 {
+#uqksjtbinb .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
-<div id="vcffqyrcqc" class="reactable html-widget" style="width:auto;height:auto;"></div>
-<script type="application/json" data-for="vcffqyrcqc">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"name":["Ribal","christopher26","sontinice","Hlavacekjr","christopher26","disruption","Ptlnd","Frahba","Stephen Hawking","Lucky Doog","Mighty M","Gunner","Barlow716","Dragon Sound","Amir","Timbo_II","Pazzo","Toupes67","Alfredo","Timbo","mato","shadowman","Piraka9011","Steven⛩️","☠️Nika247☠️","Bruno gameplays","Kind Domenech","tempie","ELECTROGUY","ForCarlon","<c5>Supr","VRAGS!","<c4>Jack","ax7","TRX1PZ","d7g41","JOTOIER","Gumby","fart","Poochie꧁꧂","Meliodas","Ice Cage","MANAS","OrangeDreams","☠️☢️DANGER☣️☠️","Topi Taupe","Rob","Feng","God","Baby JoeY","❤️LOWY❤️","xㅤ","Fede G"],"tag":["#2908VQ08","#P8CRCUP0","#2GRYJ2QV","#2JCJ9J02","#JYJQC88","#8VQJV8R02","#802YJU8CU","#89U82VQ0R","#2QPLG08U","#PUUQ08JG","#8QVQJJ99G","#2J0RC0JC","#GUG0R829","#GCP0CY80","#C0RCLQYL","#JJPQ9C9RP","#8JGJGR982","#90QR8LQV8","#2VJLYC8J","#8GYQ90P2","#82GUP0LL2","#RQQJQLR2","#9GQRJVV","#GPYC2GLV8","#P0GVVLGQP","#2LCQVQ0YR","#VJUGRUU","#C8GVV8RJU","#80J0228YQ","#UJLG2UCRG","#RQPRJUGP","#22VUPVG0","#GJV0UQCUV","#QPCUJ9P2P","#URL2VYQRG","#898JGUU80","#PQR8LLQJU","#2C9V2VU9","#JQP8Q8P2","#Y8R8LCJ8Y","#QJ9P8JRJV","#PPQ9UJGJ","#88RCPYYG","#RC8YLQP2","#2G9QRQU9","#LV89PPVYV","#8YPJVVJ","#UP88YJRQV","#PPUQQP0R","#QQVRQQ8R0","#PP2YVR2GV","#YVQYGQJYL","#VR980PCR"],"fame_102-02":[2150,2050,2650,2800,2650,2450,3100,2400,2400,2600,2500,2300,2300,1700,1550,1950,1700,2800,1100,0,500,450,200,0,0,0,0,0,0,0,0,0,0,0,0,100,800,2000,700,"NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA"],"fame_102-03":[2500,2700,2200,2650,3050,2850,2700,2500,500,2200,2400,2500,2600,1800,2250,400,850,1300,1450,2000,800,400,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2300,0,0,200,"NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA"],"fame_102-04":[2450,3000,2200,2700,2750,2600,2550,2600,2700,2700,2700,2200,1900,2300,1800,2400,2100,1200,1100,600,1550,0,450,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"NA","NA","NA","NA","NA","NA","NA","NA"],"fame_103-01":[3100,2750,2550,3050,2800,2900,3000,2600,2900,2300,2600,2000,2500,1800,2675,2900,2000,1800,1800,1800,700,800,0,"NA","NA","NA","NA","NA",0,"NA","NA",0,"NA","NA","NA","NA","NA","NA","NA","NA","NA","NA",0,"NA","NA",1300,"NA","NA","NA","NA","NA","NA","NA"],"fame_103-02":[2950,2700,2900,2700,2600,2650,2350,2400,3000,2400,2400,2600,3000,2600,2025,1300,1250,1100,1000,0,900,825,0,"NA","NA","NA","NA","NA",0,"NA","NA",0,"NA","NA","NA","NA",0,"NA","NA","NA","NA","NA",0,"NA","NA",0,0,"NA","NA","NA","NA","NA","NA"],"fame_103-03":[2750,2850,3200,2500,2700,2150,2650,2500,2850,2100,2400,1900,2800,2000,1775,1800,1900,1400,1400,1100,2150,350,550,"NA","NA","NA","NA","NA",0,"NA","NA",0,"NA","NA","NA","NA",0,"NA","NA","NA","NA","NA",0,"NA","NA",0,0,"NA","NA","NA","NA","NA","NA"],"fame_103-04":[3150,3200,3200,2900,2800,2350,2450,2500,2700,2400,2200,1800,2950,1600,1350,2750,1900,1200,2700,1750,1500,0,450,"NA","NA","NA","NA","NA",0,"NA","NA",0,"NA","NA","NA","NA",0,"NA","NA","NA","NA","NA",0,"NA","NA",0,0,1200,"NA","NA","NA","NA","NA"],"fame_104-01":[2500,2850,2900,2450,2850,2650,2000,2600,2350,2600,2100,2700,1450,2500,1950,2100,2400,600,650,1600,400,325,0,"NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA",0,"NA","NA","NA","NA","NA","NA","NA","NA",0,"NA",2600,0,1350,"NA","NA","NA"],"fame_104-02":[3400,2950,2500,1900,2350,3050,2700,2300,2500,2700,2700,2400,400,2000,1800,1650,2900,2100,1000,1700,200,0,550,"NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA",0,"NA","NA","NA","NA","NA","NA","NA","NA",0,"NA",2500,0,0,0,"NA","NA"],"fame_104-03":[2450,2250,2700,3050,2100,2750,2550,3000,3000,2600,2300,2300,1600,2300,2600,1300,0,1100,0,1100,0,0,0,"NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA",0,"NA","NA","NA","NA","NA","NA","NA","NA",0,"NA",0,0,0,0,0,0],"fame_104-4":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"NA","NA","NA","NA","NA","NA","NA","NA",0,"NA","NA","NA","NA",0,"NA","NA","NA","NA","NA","NA","NA","NA",0,"NA",0,0,0,0,0,0]},"columns":[{"id":"name","name":"name","type":"character","style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","cell":["Ribal","christopher26","sontinice","Hlavacekjr","christopher26","disruption","Ptlnd","Frahba","Stephen Hawking","Lucky Doog","Mighty M","Gunner","Barlow716","Dragon Sound","Amir","Timbo_II","Pazzo","Toupes67","Alfredo","Timbo","mato","shadowman","Piraka9011","Steven⛩️","☠️Nika247☠️","Bruno gameplays","Kind Domenech","tempie","ELECTROGUY","ForCarlon","&lt;c5&gt;Supr","VRAGS!","&lt;c4&gt;Jack","ax7","TRX1PZ","d7g41","JOTOIER","Gumby","fart","Poochie꧁꧂","Meliodas","Ice Cage","MANAS","OrangeDreams","☠️☢️DANGER☣️☠️","Topi Taupe","Rob","Feng","God","Baby JoeY","❤️LOWY❤️","xㅤ","Fede G"],"html":true,"align":"left","headerStyle":{"font-weight":"normal"}},{"id":"tag","name":"tag","type":"character","style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","cell":["#2908VQ08","#P8CRCUP0","#2GRYJ2QV","#2JCJ9J02","#JYJQC88","#8VQJV8R02","#802YJU8CU","#89U82VQ0R","#2QPLG08U","#PUUQ08JG","#8QVQJJ99G","#2J0RC0JC","#GUG0R829","#GCP0CY80","#C0RCLQYL","#JJPQ9C9RP","#8JGJGR982","#90QR8LQV8","#2VJLYC8J","#8GYQ90P2","#82GUP0LL2","#RQQJQLR2","#9GQRJVV","#GPYC2GLV8","#P0GVVLGQP","#2LCQVQ0YR","#VJUGRUU","#C8GVV8RJU","#80J0228YQ","#UJLG2UCRG","#RQPRJUGP","#22VUPVG0","#GJV0UQCUV","#QPCUJ9P2P","#URL2VYQRG","#898JGUU80","#PQR8LLQJU","#2C9V2VU9","#JQP8Q8P2","#Y8R8LCJ8Y","#QJ9P8JRJV","#PPQ9UJGJ","#88RCPYYG","#RC8YLQP2","#2G9QRQU9","#LV89PPVYV","#8YPJVVJ","#UP88YJRQV","#PPUQQP0R","#QQVRQQ8R0","#PP2YVR2GV","#YVQYGQJYL","#VR980PCR"],"html":true,"align":"left","headerStyle":{"font-weight":"normal"}},{"id":"fame_102-02","name":"102-02","type":"numeric","style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","cell":["2150","2050","2650","2800","2650","2450","3100","2400","2400","2600","2500","2300","2300","1700","1550","1950","1700","2800","1100","0","500","450","200","0","0","0","0","0","0","0","0","0","0","0","0","100","800","2000","700","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA"],"html":true,"align":"right","headerStyle":{"font-weight":"normal"}},{"id":"fame_102-03","name":"102-03","type":"numeric","style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","cell":["2500","2700","2200","2650","3050","2850","2700","2500","500","2200","2400","2500","2600","1800","2250","400","850","1300","1450","2000","800","400","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","2300","0","0","200","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA"],"html":true,"align":"right","headerStyle":{"font-weight":"normal"}},{"id":"fame_102-04","name":"102-04","type":"numeric","style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","cell":["2450","3000","2200","2700","2750","2600","2550","2600","2700","2700","2700","2200","1900","2300","1800","2400","2100","1200","1100","600","1550","0","450","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","NA","NA","NA","NA","NA","NA","NA","NA"],"html":true,"align":"right","headerStyle":{"font-weight":"normal"}},{"id":"fame_103-01","name":"103-01","type":"numeric","style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","cell":["3100","2750","2550","3050","2800","2900","3000","2600","2900","2300","2600","2000","2500","1800","2675","2900","2000","1800","1800","1800","700","800","0","NA","NA","NA","NA","NA","0","NA","NA","0","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","0","NA","NA","1300","NA","NA","NA","NA","NA","NA","NA"],"html":true,"align":"right","headerStyle":{"font-weight":"normal"}},{"id":"fame_103-02","name":"103-02","type":"numeric","style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","cell":["2950","2700","2900","2700","2600","2650","2350","2400","3000","2400","2400","2600","3000","2600","2025","1300","1250","1100","1000","0","900","825","0","NA","NA","NA","NA","NA","0","NA","NA","0","NA","NA","NA","NA","0","NA","NA","NA","NA","NA","0","NA","NA","0","0","NA","NA","NA","NA","NA","NA"],"html":true,"align":"right","headerStyle":{"font-weight":"normal"}},{"id":"fame_103-03","name":"103-03","type":"numeric","style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","cell":["2750","2850","3200","2500","2700","2150","2650","2500","2850","2100","2400","1900","2800","2000","1775","1800","1900","1400","1400","1100","2150","350","550","NA","NA","NA","NA","NA","0","NA","NA","0","NA","NA","NA","NA","0","NA","NA","NA","NA","NA","0","NA","NA","0","0","NA","NA","NA","NA","NA","NA"],"html":true,"align":"right","headerStyle":{"font-weight":"normal"}},{"id":"fame_103-04","name":"103-04","type":"numeric","style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","cell":["3150","3200","3200","2900","2800","2350","2450","2500","2700","2400","2200","1800","2950","1600","1350","2750","1900","1200","2700","1750","1500","0","450","NA","NA","NA","NA","NA","0","NA","NA","0","NA","NA","NA","NA","0","NA","NA","NA","NA","NA","0","NA","NA","0","0","1200","NA","NA","NA","NA","NA"],"html":true,"align":"right","headerStyle":{"font-weight":"normal"}},{"id":"fame_104-01","name":"104-01","type":"numeric","style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","cell":["2500","2850","2900","2450","2850","2650","2000","2600","2350","2600","2100","2700","1450","2500","1950","2100","2400","600","650","1600","400","325","0","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","0","NA","NA","NA","NA","NA","NA","NA","NA","0","NA","2600","0","1350","NA","NA","NA"],"html":true,"align":"right","headerStyle":{"font-weight":"normal"}},{"id":"fame_104-02","name":"104-02","type":"numeric","style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","cell":["3400","2950","2500","1900","2350","3050","2700","2300","2500","2700","2700","2400","400","2000","1800","1650","2900","2100","1000","1700","200","0","550","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","0","NA","NA","NA","NA","NA","NA","NA","NA","0","NA","2500","0","0","0","NA","NA"],"html":true,"align":"right","headerStyle":{"font-weight":"normal"}},{"id":"fame_104-03","name":"104-03","type":"numeric","style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","cell":["2450","2250","2700","3050","2100","2750","2550","3000","3000","2600","2300","2300","1600","2300","2600","1300","0","1100","0","1100","0","0","0","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","0","NA","NA","NA","NA","NA","NA","NA","NA","0","NA","0","0","0","0","0","0"],"html":true,"align":"right","headerStyle":{"font-weight":"normal"}},{"id":"fame_104-4","name":"104-4","type":"numeric","style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","cell":["0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","NA","NA","NA","NA","NA","NA","NA","NA","0","NA","NA","NA","NA","0","NA","NA","NA","NA","NA","NA","NA","NA","0","NA","0","0","0","0","0","0"],"html":true,"align":"right","headerStyle":{"font-weight":"normal"}}],"defaultPageSize":50,"showPageSizeOptions":false,"pageSizeOptions":[10,25,50,100],"paginationType":"numbers","showPagination":true,"showPageInfo":true,"minRows":1,"highlight":true,"compact":true,"showSortable":true,"height":"auto","theme":{"color":"#333333","backgroundColor":"#FFFFFF","stripedColor":"rgba(128,128,128,0.05)","style":{"fontFamily":"'Martel Sans', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"},"headerStyle":{"borderTopStyle":"solid","borderTopWidth":"2px","borderTopColor":"#D3D3D3","borderBottomStyle":"solid","borderBottomWidth":"2px","borderBottomColor":"#D3D3D3"}},"elementId":"vcffqyrcqc","dataKey":"d9fca89d3f67d73e52d2e5a9dd8fee66"},"children":[]},"class":"reactR_markup"},"evals":["tag.attribs.columns.0.style","tag.attribs.columns.1.style","tag.attribs.columns.2.style","tag.attribs.columns.3.style","tag.attribs.columns.4.style","tag.attribs.columns.5.style","tag.attribs.columns.6.style","tag.attribs.columns.7.style","tag.attribs.columns.8.style","tag.attribs.columns.9.style","tag.attribs.columns.10.style","tag.attribs.columns.11.style","tag.attribs.columns.12.style"],"jsHooks":[]}</script>
+<div id="uqksjtbinb" class="reactable html-widget" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="uqksjtbinb">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"name":["Ribal","christopher26","sontinice","Hlavacekjr","christopher26","disruption","Ptlnd","Frahba","Stephen Hawking","Lucky Doog","Mighty M","Gunner","Barlow716","Dragon Sound","Amir","Timbo_II","Pazzo","Toupes67","Alfredo","Timbo","mato","shadowman","Piraka9011","Steven⛩️","☠️Nika247☠️","Bruno gameplays","Kind Domenech","tempie","ELECTROGUY","ForCarlon","<c5>Supr","VRAGS!","<c4>Jack","ax7","TRX1PZ","d7g41","JOTOIER","Gumby","fart","Poochie꧁꧂","Meliodas","Ice Cage","MANAS","OrangeDreams","☠️☢️DANGER☣️☠️","Topi Taupe","Rob","Feng","God","Baby JoeY","❤️LOWY❤️","xㅤ","Fede G"],"tag":["#2908VQ08","#P8CRCUP0","#2GRYJ2QV","#2JCJ9J02","#JYJQC88","#8VQJV8R02","#802YJU8CU","#89U82VQ0R","#2QPLG08U","#PUUQ08JG","#8QVQJJ99G","#2J0RC0JC","#GUG0R829","#GCP0CY80","#C0RCLQYL","#JJPQ9C9RP","#8JGJGR982","#90QR8LQV8","#2VJLYC8J","#8GYQ90P2","#82GUP0LL2","#RQQJQLR2","#9GQRJVV","#GPYC2GLV8","#P0GVVLGQP","#2LCQVQ0YR","#VJUGRUU","#C8GVV8RJU","#80J0228YQ","#UJLG2UCRG","#RQPRJUGP","#22VUPVG0","#GJV0UQCUV","#QPCUJ9P2P","#URL2VYQRG","#898JGUU80","#PQR8LLQJU","#2C9V2VU9","#JQP8Q8P2","#Y8R8LCJ8Y","#QJ9P8JRJV","#PPQ9UJGJ","#88RCPYYG","#RC8YLQP2","#2G9QRQU9","#LV89PPVYV","#8YPJVVJ","#UP88YJRQV","#PPUQQP0R","#QQVRQQ8R0","#PP2YVR2GV","#YVQYGQJYL","#VR980PCR"],"fame_102-02":[2150,2050,2650,2800,2650,2450,3100,2400,2400,2600,2500,2300,2300,1700,1550,1950,1700,2800,1100,0,500,450,200,0,0,0,0,0,0,0,0,0,0,0,0,100,800,2000,700,"NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA"],"fame_102-03":[2500,2700,2200,2650,3050,2850,2700,2500,500,2200,2400,2500,2600,1800,2250,400,850,1300,1450,2000,800,400,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2300,0,0,200,"NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA"],"fame_102-04":[2450,3000,2200,2700,2750,2600,2550,2600,2700,2700,2700,2200,1900,2300,1800,2400,2100,1200,1100,600,1550,0,450,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"NA","NA","NA","NA","NA","NA","NA","NA"],"fame_103-01":[3100,2750,2550,3050,2800,2900,3000,2600,2900,2300,2600,2000,2500,1800,2675,2900,2000,1800,1800,1800,700,800,0,"NA","NA","NA","NA","NA",0,"NA","NA",0,"NA","NA","NA","NA","NA","NA","NA","NA","NA","NA",0,"NA","NA",1300,"NA","NA","NA","NA","NA","NA","NA"],"fame_103-02":[2950,2700,2900,2700,2600,2650,2350,2400,3000,2400,2400,2600,3000,2600,2025,1300,1250,1100,1000,0,900,825,0,"NA","NA","NA","NA","NA",0,"NA","NA",0,"NA","NA","NA","NA",0,"NA","NA","NA","NA","NA",0,"NA","NA",0,0,"NA","NA","NA","NA","NA","NA"],"fame_103-03":[2750,2850,3200,2500,2700,2150,2650,2500,2850,2100,2400,1900,2800,2000,1775,1800,1900,1400,1400,1100,2150,350,550,"NA","NA","NA","NA","NA",0,"NA","NA",0,"NA","NA","NA","NA",0,"NA","NA","NA","NA","NA",0,"NA","NA",0,0,"NA","NA","NA","NA","NA","NA"],"fame_103-04":[3150,3200,3200,2900,2800,2350,2450,2500,2700,2400,2200,1800,2950,1600,1350,2750,1900,1200,2700,1750,1500,0,450,"NA","NA","NA","NA","NA",0,"NA","NA",0,"NA","NA","NA","NA",0,"NA","NA","NA","NA","NA",0,"NA","NA",0,0,1200,"NA","NA","NA","NA","NA"],"fame_104-01":[2500,2850,2900,2450,2850,2650,2000,2600,2350,2600,2100,2700,1450,2500,1950,2100,2400,600,650,1600,400,325,0,"NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA",0,"NA","NA","NA","NA","NA","NA","NA","NA",0,"NA",2600,0,1350,"NA","NA","NA"],"fame_104-02":[3400,2950,2500,1900,2350,3050,2700,2300,2500,2700,2700,2400,400,2000,1800,1650,2900,2100,1000,1700,200,0,550,"NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA",0,"NA","NA","NA","NA","NA","NA","NA","NA",0,"NA",2500,0,0,0,"NA","NA"],"fame_104-03":[2450,2250,2700,3050,2100,2750,2550,3000,3000,2600,2300,2300,1600,2300,2600,1300,0,1100,0,1100,0,0,0,"NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA",0,"NA","NA","NA","NA","NA","NA","NA","NA",0,"NA",0,0,0,0,0,0],"fame_104-4":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"NA","NA","NA","NA","NA","NA","NA","NA",0,"NA","NA","NA","NA",0,"NA","NA","NA","NA","NA","NA","NA","NA",0,"NA",0,0,0,0,0,0]},"columns":[{"id":"name","name":"name","type":"character","style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","cell":["Ribal","christopher26","sontinice","Hlavacekjr","christopher26","disruption","Ptlnd","Frahba","Stephen Hawking","Lucky Doog","Mighty M","Gunner","Barlow716","Dragon Sound","Amir","Timbo_II","Pazzo","Toupes67","Alfredo","Timbo","mato","shadowman","Piraka9011","Steven⛩️","☠️Nika247☠️","Bruno gameplays","Kind Domenech","tempie","ELECTROGUY","ForCarlon","&lt;c5&gt;Supr","VRAGS!","&lt;c4&gt;Jack","ax7","TRX1PZ","d7g41","JOTOIER","Gumby","fart","Poochie꧁꧂","Meliodas","Ice Cage","MANAS","OrangeDreams","☠️☢️DANGER☣️☠️","Topi Taupe","Rob","Feng","God","Baby JoeY","❤️LOWY❤️","xㅤ","Fede G"],"html":true,"align":"left","headerStyle":{"font-weight":"normal"}},{"id":"tag","name":"tag","type":"character","style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","cell":["#2908VQ08","#P8CRCUP0","#2GRYJ2QV","#2JCJ9J02","#JYJQC88","#8VQJV8R02","#802YJU8CU","#89U82VQ0R","#2QPLG08U","#PUUQ08JG","#8QVQJJ99G","#2J0RC0JC","#GUG0R829","#GCP0CY80","#C0RCLQYL","#JJPQ9C9RP","#8JGJGR982","#90QR8LQV8","#2VJLYC8J","#8GYQ90P2","#82GUP0LL2","#RQQJQLR2","#9GQRJVV","#GPYC2GLV8","#P0GVVLGQP","#2LCQVQ0YR","#VJUGRUU","#C8GVV8RJU","#80J0228YQ","#UJLG2UCRG","#RQPRJUGP","#22VUPVG0","#GJV0UQCUV","#QPCUJ9P2P","#URL2VYQRG","#898JGUU80","#PQR8LLQJU","#2C9V2VU9","#JQP8Q8P2","#Y8R8LCJ8Y","#QJ9P8JRJV","#PPQ9UJGJ","#88RCPYYG","#RC8YLQP2","#2G9QRQU9","#LV89PPVYV","#8YPJVVJ","#UP88YJRQV","#PPUQQP0R","#QQVRQQ8R0","#PP2YVR2GV","#YVQYGQJYL","#VR980PCR"],"html":true,"align":"left","headerStyle":{"font-weight":"normal"}},{"id":"fame_102-02","name":"102-02","type":"numeric","style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","cell":["2150","2050","2650","2800","2650","2450","3100","2400","2400","2600","2500","2300","2300","1700","1550","1950","1700","2800","1100","0","500","450","200","0","0","0","0","0","0","0","0","0","0","0","0","100","800","2000","700","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA"],"html":true,"align":"right","headerStyle":{"font-weight":"normal"}},{"id":"fame_102-03","name":"102-03","type":"numeric","style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","cell":["2500","2700","2200","2650","3050","2850","2700","2500","500","2200","2400","2500","2600","1800","2250","400","850","1300","1450","2000","800","400","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","2300","0","0","200","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA"],"html":true,"align":"right","headerStyle":{"font-weight":"normal"}},{"id":"fame_102-04","name":"102-04","type":"numeric","style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","cell":["2450","3000","2200","2700","2750","2600","2550","2600","2700","2700","2700","2200","1900","2300","1800","2400","2100","1200","1100","600","1550","0","450","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","NA","NA","NA","NA","NA","NA","NA","NA"],"html":true,"align":"right","headerStyle":{"font-weight":"normal"}},{"id":"fame_103-01","name":"103-01","type":"numeric","style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","cell":["3100","2750","2550","3050","2800","2900","3000","2600","2900","2300","2600","2000","2500","1800","2675","2900","2000","1800","1800","1800","700","800","0","NA","NA","NA","NA","NA","0","NA","NA","0","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","0","NA","NA","1300","NA","NA","NA","NA","NA","NA","NA"],"html":true,"align":"right","headerStyle":{"font-weight":"normal"}},{"id":"fame_103-02","name":"103-02","type":"numeric","style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","cell":["2950","2700","2900","2700","2600","2650","2350","2400","3000","2400","2400","2600","3000","2600","2025","1300","1250","1100","1000","0","900","825","0","NA","NA","NA","NA","NA","0","NA","NA","0","NA","NA","NA","NA","0","NA","NA","NA","NA","NA","0","NA","NA","0","0","NA","NA","NA","NA","NA","NA"],"html":true,"align":"right","headerStyle":{"font-weight":"normal"}},{"id":"fame_103-03","name":"103-03","type":"numeric","style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","cell":["2750","2850","3200","2500","2700","2150","2650","2500","2850","2100","2400","1900","2800","2000","1775","1800","1900","1400","1400","1100","2150","350","550","NA","NA","NA","NA","NA","0","NA","NA","0","NA","NA","NA","NA","0","NA","NA","NA","NA","NA","0","NA","NA","0","0","NA","NA","NA","NA","NA","NA"],"html":true,"align":"right","headerStyle":{"font-weight":"normal"}},{"id":"fame_103-04","name":"103-04","type":"numeric","style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","cell":["3150","3200","3200","2900","2800","2350","2450","2500","2700","2400","2200","1800","2950","1600","1350","2750","1900","1200","2700","1750","1500","0","450","NA","NA","NA","NA","NA","0","NA","NA","0","NA","NA","NA","NA","0","NA","NA","NA","NA","NA","0","NA","NA","0","0","1200","NA","NA","NA","NA","NA"],"html":true,"align":"right","headerStyle":{"font-weight":"normal"}},{"id":"fame_104-01","name":"104-01","type":"numeric","style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","cell":["2500","2850","2900","2450","2850","2650","2000","2600","2350","2600","2100","2700","1450","2500","1950","2100","2400","600","650","1600","400","325","0","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","0","NA","NA","NA","NA","NA","NA","NA","NA","0","NA","2600","0","1350","NA","NA","NA"],"html":true,"align":"right","headerStyle":{"font-weight":"normal"}},{"id":"fame_104-02","name":"104-02","type":"numeric","style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","cell":["3400","2950","2500","1900","2350","3050","2700","2300","2500","2700","2700","2400","400","2000","1800","1650","2900","2100","1000","1700","200","0","550","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","0","NA","NA","NA","NA","NA","NA","NA","NA","0","NA","2500","0","0","0","NA","NA"],"html":true,"align":"right","headerStyle":{"font-weight":"normal"}},{"id":"fame_104-03","name":"104-03","type":"numeric","style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","cell":["2450","2250","2700","3050","2100","2750","2550","3000","3000","2600","2300","2300","1600","2300","2600","1300","0","1100","0","1100","0","0","0","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","0","NA","NA","NA","NA","NA","NA","NA","NA","0","NA","0","0","0","0","0","0"],"html":true,"align":"right","headerStyle":{"font-weight":"normal"}},{"id":"fame_104-4","name":"104-4","type":"numeric","style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","cell":["0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","NA","NA","NA","NA","NA","NA","NA","NA","0","NA","NA","NA","NA","0","NA","NA","NA","NA","NA","NA","NA","NA","0","NA","0","0","0","0","0","0"],"html":true,"align":"right","headerStyle":{"font-weight":"normal"}}],"defaultPageSize":50,"showPageSizeOptions":false,"pageSizeOptions":[10,25,50,100],"paginationType":"numbers","showPagination":true,"showPageInfo":true,"minRows":1,"highlight":true,"compact":true,"showSortable":true,"height":"auto","theme":{"color":"#333333","backgroundColor":"#FFFFFF","stripedColor":"rgba(128,128,128,0.05)","style":{"fontFamily":"'Martel Sans', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"},"headerStyle":{"borderTopStyle":"solid","borderTopWidth":"2px","borderTopColor":"#D3D3D3","borderBottomStyle":"solid","borderBottomWidth":"2px","borderBottomColor":"#D3D3D3"}},"elementId":"uqksjtbinb","dataKey":"d9fca89d3f67d73e52d2e5a9dd8fee66"},"children":[]},"class":"reactR_markup"},"evals":["tag.attribs.columns.0.style","tag.attribs.columns.1.style","tag.attribs.columns.2.style","tag.attribs.columns.3.style","tag.attribs.columns.4.style","tag.attribs.columns.5.style","tag.attribs.columns.6.style","tag.attribs.columns.7.style","tag.attribs.columns.8.style","tag.attribs.columns.9.style","tag.attribs.columns.10.style","tag.attribs.columns.11.style","tag.attribs.columns.12.style"],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
@@ -654,6 +661,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       } else {
         el.classList.add('notransition');
       }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
     }
   }
   const toggleColorMode = (alternate) => {
@@ -722,13 +756,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -807,10 +843,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -820,8 +855,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -834,6 +878,125 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -877,6 +1040,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -902,6 +1066,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -962,6 +1152,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 
