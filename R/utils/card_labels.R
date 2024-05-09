@@ -59,6 +59,7 @@ card_labels <- tibble::tribble(
   'Wall Breakers',     'Wall Brk', 
   'Electro Giant',     'E Giant', 
   'Goblin Drill',      'GobDrill',
+  'Void',              'Void',
   
   # rare
   'Hog Rider',         'Hog',      
