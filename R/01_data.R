@@ -129,7 +129,7 @@ cards <- cards |>
   ) |> 
   select(name, tag, cards_name, value) |> 
   pivot_wider(id_cols = c(name, tag), names_from = cards_name, values_from = value) |> 
-  select(name, tag, card_labels$name) |> 
+  select(name, tag, dplyr::any_of(card_labels$name)) |> 
   mutate(across(everything(), .fns = \(x) replace_na(x, '---')))
 
 
