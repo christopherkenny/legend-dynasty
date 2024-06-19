@@ -28,6 +28,7 @@ card_labels <- tibble::tribble(
   'Fisherman',         'Fisher', 
   'Mother Witch',      'MotherW',
   'Phoenix',           'Phoenix',
+  'Goblin Machine',    'GobMach',
   
   # epic
   'Goblin Barrel',     'Gob Bar',  
@@ -60,6 +61,7 @@ card_labels <- tibble::tribble(
   'Electro Giant',     'E Giant', 
   'Goblin Drill',      'GobDrill',
   'Void',              'Void',
+  'Goblin Curse',      'GobCurse',
   
   # rare
   'Hog Rider',         'Hog',      
@@ -90,6 +92,7 @@ card_labels <- tibble::tribble(
   'Bomb Tower',        'B Tower',  
   'Earthquake',        'Quake',    
   'Goblin Cage',       'Gob Cage', 
+  'Goblin Demolisher', 'Gob Demo',
   
   # common
   'Zap',               'Zap',      
