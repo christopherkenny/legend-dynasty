@@ -163,6 +163,7 @@ boat <- players |>
   ungroup() |> 
   arrange(desc(boat)) |> 
   mutate(across(everything(), as.character))
+
 boat |> 
   add_row(imgs |> select(all_of(intersect(names(imgs), names(boat)))), .before = 1) |> 
   write_csv('data/boat.csv')

@@ -75,7 +75,7 @@ max_cards <- 109
 ```
 
 
-:::{.column-screen}
+:::{.column-screen-inset}
 ```{r}
 #| label: table
 #| warning: false

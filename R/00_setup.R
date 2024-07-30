@@ -9,7 +9,7 @@ suppressPackageStartupMessages({
   library(royale)
   library(gt)
 })
-clan_tag <- '99R2PQVR'
+clan_tag <- read_lines('clan_tag.txt')[[1]]
 
 time_short <- function(times) {
   times <- as.duration(floor_date(as_datetime(times), 'minutes') %--% floor_date(now(), 'minutes')) / dminutes(1)

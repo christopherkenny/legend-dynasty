@@ -93,6 +93,7 @@ card_labels <- tibble::tribble(
   'Earthquake',        'Quake',    
   'Goblin Cage',       'Gob Cage', 
   'Goblin Demolisher', 'Gob Demo',
+  'Suspicious Bush',   'Bush',
   
   # common
   'Zap',               'Zap',      

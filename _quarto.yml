@@ -6,6 +6,7 @@ website:
   title: "LeGeND Dynasty"
   favicon: "legend-family-icon.png"
   navbar:
+    logo: "legend-family-icon.png"
     left:
       - href: index.qmd
         text: Activity
