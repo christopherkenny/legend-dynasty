@@ -19,8 +19,6 @@ progress <- read_csv(here('data/event.csv'),
                   show_col_types = FALSE)
 ```
 
-:::{.column-screen-inset}
-
 ```{r}
 progress |> 
   gt() |> 
@@ -39,6 +37,3 @@ progress |>
     page_size_default = 50
   )
 ```
-
-:::
-
