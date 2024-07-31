@@ -1,0 +1,44 @@
+---
+title: "Event Progress"
+date: now
+published-title: "Last Updated"
+execute: 
+  echo: false
+---
+
+```{r}
+#| label: setup
+suppressPackageStartupMessages({library(here)})
+source(here('R/00_setup.R'))
+```
+
+```{r}
+#| label: event_progress
+progress <- read_csv(here('data/event.csv'), 
+                  #col_types = cols(.default = col_character()),
+                  show_col_types = FALSE)
+```
+
+:::{.column-screen-inset}
+
+```{r}
+progress |> 
+  gt() |> 
+  data_color(columns = event, palette = c('white', 'limegreen')) |> 
+  cols_label(
+    rank = '',
+    name = 'Player',
+    event = 'Event Trophies'
+  )  |> 
+  opt_table_font(
+    font = google_font('Martel Sans')
+  ) |> 
+  opt_interactive(
+    use_compact_mode = TRUE,
+    use_highlight = TRUE,
+    page_size_default = 50
+  )
+```
+
+:::
+
