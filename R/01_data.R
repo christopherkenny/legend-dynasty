@@ -1,7 +1,10 @@
 source(here::here('R/00_setup.R'))
-if (Sys.getenv('username') != 'chris') {
-  options(royale.use_proxy = TRUE)
-}
+
+options(
+  royale.use_proxy = !(Sys.getenv('username') == 'chris' || 
+                         Sys.getenv('USER') == 'chris')
+)
+
 
 # prep data ----
 
