@@ -22,7 +22,6 @@ website:
         text: "Events"
       - about.qmd
 
-
 format:
   html:
     theme:

@@ -23,7 +23,7 @@ cards <- read_csv(here('data/cards.csv'),
 
 ```{r}
 cards |> 
-  gt() |>
+  gt(id = 'cards') |>
   text_transform(
     locations = cells_body(rows = 1),
     fn = function(x) if (!is.na(x)) web_image(x) else ''
@@ -35,6 +35,14 @@ cards |>
     use_compact_mode = TRUE,
     use_highlight = TRUE,
     page_size_default = 51
+  ) |> 
+  opt_css(
+    css = '
+    #cards .gt_stub {
+    position: sticky;
+    left: 0;
+    }
+    '
   )
 ```
 
