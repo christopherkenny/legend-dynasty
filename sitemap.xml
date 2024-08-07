@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://legenddynasty.dev/war.html</loc>
-    <lastmod>2024-08-07T08:56:52.953Z</lastmod>
-  </url>
-  <url>
-    <loc>https://legenddynasty.dev/data/readme.html</loc>
-    <lastmod>2024-08-07T08:56:52.953Z</lastmod>
-  </url>
-  <url>
-    <loc>https://legenddynasty.dev/index.html</loc>
-    <lastmod>2024-08-07T08:56:52.953Z</lastmod>
-  </url>
-  <url>
-    <loc>https://legenddynasty.dev/about.html</loc>
-    <lastmod>2024-08-07T08:56:52.953Z</lastmod>
+    <loc>https://legenddynasty.dev/boat.html</loc>
+    <lastmod>2024-08-07T20:57:03.495Z</lastmod>
   </url>
   <url>
     <loc>https://legenddynasty.dev/decks_used.html</loc>
-    <lastmod>2024-08-07T08:56:52.953Z</lastmod>
+    <lastmod>2024-08-07T20:57:03.495Z</lastmod>
   </url>
   <url>
-    <loc>https://legenddynasty.dev/event.html</loc>
-    <lastmod>2024-08-07T08:56:52.953Z</lastmod>
-  </url>
-  <url>
-    <loc>https://legenddynasty.dev/boat.html</loc>
-    <lastmod>2024-08-07T08:56:52.953Z</lastmod>
+    <loc>https://legenddynasty.dev/data/readme.html</loc>
+    <lastmod>2024-08-07T20:57:03.495Z</lastmod>
   </url>
   <url>
     <loc>https://legenddynasty.dev/cards.html</loc>
-    <lastmod>2024-08-07T08:56:52.953Z</lastmod>
+    <lastmod>2024-08-07T20:57:03.495Z</lastmod>
+  </url>
+  <url>
+    <loc>https://legenddynasty.dev/about.html</loc>
+    <lastmod>2024-08-07T20:57:03.495Z</lastmod>
+  </url>
+  <url>
+    <loc>https://legenddynasty.dev/event.html</loc>
+    <lastmod>2024-08-07T20:57:03.495Z</lastmod>
+  </url>
+  <url>
+    <loc>https://legenddynasty.dev/war.html</loc>
+    <lastmod>2024-08-07T20:57:03.499Z</lastmod>
+  </url>
+  <url>
+    <loc>https://legenddynasty.dev/index.html</loc>
+    <lastmod>2024-08-07T20:57:03.495Z</lastmod>
   </url>
 </urlset>
