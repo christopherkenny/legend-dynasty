@@ -1,7 +1,10 @@
 source(here::here('R/00_setup.R'))
-if (Sys.getenv('username') != 'chris') {
-  options(royale.use_proxy = TRUE)
-}
+
+options(
+  royale.use_proxy = !(Sys.getenv('username') == 'chris' || 
+                         Sys.getenv('USER') == 'chris')
+)
+
 
 # prep data ----
 
@@ -167,3 +170,19 @@ boat <- players |>
 boat |> 
   add_row(imgs |> select(all_of(intersect(names(imgs), names(boat)))), .before = 1) |> 
   write_csv('data/boat.csv')
+
+## event progress ----
+players$progress <- lapply(players$progress, royale:::list_hoist)
+
+players |> 
+  mutate(
+    event = map_int(progress, \(x) if ('trophies' %in% names(x)) {
+      as.integer(x$trophies)
+    } else {
+      NA_integer_
+    })
+  ) |> 
+  select(name, event) |> 
+  arrange(desc(event)) |> 
+  mutate(rank = row_number(), .before = everything()) |> 
+  write_csv('data/event.csv')

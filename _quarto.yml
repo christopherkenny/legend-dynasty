@@ -18,8 +18,9 @@ website:
         text: "War"
       - href: decks_used.qmd
         text: "Decks Used"
+      - href: event.qmd
+        text: "Events"
       - about.qmd
-
 
 format:
   html:
