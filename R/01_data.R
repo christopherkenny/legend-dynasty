@@ -177,7 +177,7 @@ players$progress <- lapply(players$progress, royale:::list_hoist)
 players |> 
   mutate(
     event = map_int(progress, \(x) if ('trophies' %in% names(x)) {
-      as.integer(x$trophies)
+      dplyr::last(as.integer(x$trophies))
     } else {
       NA_integer_
     })
