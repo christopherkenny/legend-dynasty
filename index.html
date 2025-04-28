@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.43">
+<meta name="generator" content="quarto-1.7.29">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -31,17 +31,20 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./legend-family-icon.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-d4d76bf8491c20bad77d141916dc28e1.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-4379b0ccadffce622b03caf4c46266b3.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-748b535e376f14d4692bf2b2e5fd6380.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-1e4adc4738d01e9cee2329e023e43f50.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-eff5e7c350bd88b162c43986e7ef7b06.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-82eaea5a6515d4e8388f3e5e40526c0c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-39017ca276f174ce8ea5a4ccd8dd1b5a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-82eaea5a6515d4e8388f3e5e40526c0c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -74,7 +77,168 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -140,6 +304,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content">
 
+
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Activity</h1>
@@ -153,7 +318,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">Monday, April 28, 2025 at 10:43+0000</p>
+      <p class="date">Monday, April 28, 2025 at 20:59+0000</p>
     </div>
   </div>
   
@@ -168,24 +333,24 @@ ul.task-list li input[type="checkbox"] {
 <div class="column-screen-inset">
 <div class="cell">
 <div class="cell-output-display">
-<div id="ifquexapvx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="vtyotdfyze" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>@import url("https://fonts.googleapis.com/css2?family=Martel+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-#ifquexapvx table {
+#vtyotdfyze table {
   font-family: 'Martel Sans', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ifquexapvx thead, #ifquexapvx tbody, #ifquexapvx tfoot, #ifquexapvx tr, #ifquexapvx td, #ifquexapvx th {
+#vtyotdfyze thead, #vtyotdfyze tbody, #vtyotdfyze tfoot, #vtyotdfyze tr, #vtyotdfyze td, #vtyotdfyze th {
   border-style: none;
 }
 
-#ifquexapvx p {
+#vtyotdfyze p {
   margin: 0;
   padding: 0;
 }
 
-#ifquexapvx .gt_table {
+#vtyotdfyze .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -211,12 +376,12 @@ ul.task-list li input[type="checkbox"] {
   border-left-color: #D3D3D3;
 }
 
-#ifquexapvx .gt_caption {
+#vtyotdfyze .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ifquexapvx .gt_title {
+#vtyotdfyze .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -228,7 +393,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-width: 0;
 }
 
-#ifquexapvx .gt_subtitle {
+#vtyotdfyze .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -240,7 +405,7 @@ ul.task-list li input[type="checkbox"] {
   border-top-width: 0;
 }
 
-#ifquexapvx .gt_heading {
+#vtyotdfyze .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -252,13 +417,13 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#ifquexapvx .gt_bottom_border {
+#vtyotdfyze .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ifquexapvx .gt_col_headings {
+#vtyotdfyze .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -273,7 +438,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#ifquexapvx .gt_col_heading {
+#vtyotdfyze .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -293,7 +458,7 @@ ul.task-list li input[type="checkbox"] {
   overflow-x: hidden;
 }
 
-#ifquexapvx .gt_column_spanner_outer {
+#vtyotdfyze .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -305,15 +470,15 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 4px;
 }
 
-#ifquexapvx .gt_column_spanner_outer:first-child {
+#vtyotdfyze .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ifquexapvx .gt_column_spanner_outer:last-child {
+#vtyotdfyze .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ifquexapvx .gt_column_spanner {
+#vtyotdfyze .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -325,11 +490,11 @@ ul.task-list li input[type="checkbox"] {
   width: 100%;
 }
 
-#ifquexapvx .gt_spanner_row {
+#vtyotdfyze .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ifquexapvx .gt_group_heading {
+#vtyotdfyze .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -355,7 +520,7 @@ ul.task-list li input[type="checkbox"] {
   text-align: left;
 }
 
-#ifquexapvx .gt_empty_group_heading {
+#vtyotdfyze .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -370,15 +535,15 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 
-#ifquexapvx .gt_from_md > :first-child {
+#vtyotdfyze .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ifquexapvx .gt_from_md > :last-child {
+#vtyotdfyze .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ifquexapvx .gt_row {
+#vtyotdfyze .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -397,7 +562,7 @@ ul.task-list li input[type="checkbox"] {
   overflow-x: hidden;
 }
 
-#ifquexapvx .gt_stub {
+#vtyotdfyze .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -410,7 +575,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#ifquexapvx .gt_stub_row_group {
+#vtyotdfyze .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -424,15 +589,15 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: top;
 }
 
-#ifquexapvx .gt_row_group_first td {
+#vtyotdfyze .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ifquexapvx .gt_row_group_first th {
+#vtyotdfyze .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ifquexapvx .gt_summary_row {
+#vtyotdfyze .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -442,16 +607,16 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#ifquexapvx .gt_first_summary_row {
+#vtyotdfyze .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ifquexapvx .gt_first_summary_row.thick {
+#vtyotdfyze .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ifquexapvx .gt_last_summary_row {
+#vtyotdfyze .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -461,7 +626,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#ifquexapvx .gt_grand_summary_row {
+#vtyotdfyze .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -471,7 +636,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#ifquexapvx .gt_first_grand_summary_row {
+#vtyotdfyze .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -481,7 +646,7 @@ ul.task-list li input[type="checkbox"] {
   border-top-color: #D3D3D3;
 }
 
-#ifquexapvx .gt_last_grand_summary_row_top {
+#vtyotdfyze .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -491,11 +656,11 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#ifquexapvx .gt_striped {
+#vtyotdfyze .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ifquexapvx .gt_table_body {
+#vtyotdfyze .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -504,7 +669,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#ifquexapvx .gt_footnotes {
+#vtyotdfyze .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -518,7 +683,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#ifquexapvx .gt_footnote {
+#vtyotdfyze .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -527,7 +692,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#ifquexapvx .gt_sourcenotes {
+#vtyotdfyze .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -541,7 +706,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#ifquexapvx .gt_sourcenote {
+#vtyotdfyze .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -549,72 +714,72 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#ifquexapvx .gt_left {
+#vtyotdfyze .gt_left {
   text-align: left;
 }
 
-#ifquexapvx .gt_center {
+#vtyotdfyze .gt_center {
   text-align: center;
 }
 
-#ifquexapvx .gt_right {
+#vtyotdfyze .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ifquexapvx .gt_font_normal {
+#vtyotdfyze .gt_font_normal {
   font-weight: normal;
 }
 
-#ifquexapvx .gt_font_bold {
+#vtyotdfyze .gt_font_bold {
   font-weight: bold;
 }
 
-#ifquexapvx .gt_font_italic {
+#vtyotdfyze .gt_font_italic {
   font-style: italic;
 }
 
-#ifquexapvx .gt_super {
+#vtyotdfyze .gt_super {
   font-size: 65%;
 }
 
-#ifquexapvx .gt_footnote_marks {
+#vtyotdfyze .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ifquexapvx .gt_asterisk {
+#vtyotdfyze .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ifquexapvx .gt_indent_1 {
+#vtyotdfyze .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ifquexapvx .gt_indent_2 {
+#vtyotdfyze .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ifquexapvx .gt_indent_3 {
+#vtyotdfyze .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ifquexapvx .gt_indent_4 {
+#vtyotdfyze .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ifquexapvx .gt_indent_5 {
+#vtyotdfyze .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ifquexapvx .katex-display {
+#vtyotdfyze .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ifquexapvx div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#vtyotdfyze div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -701,10 +866,10 @@ Decks Used
 <tr class="odd">
 <td class="gt_row gt_left" headers="name">Ptlnd</td>
 <td class="gt_row gt_left" headers="tag">#802YJU8CU</td>
-<td class="gt_row gt_left" headers="last_seen" style="background-color: #FFFFFF; color: #000000">7h 26m</td>
+<td class="gt_row gt_left" headers="last_seen" style="background-color: #FFFFFF; color: #000000">10m</td>
 <td class="gt_row gt_left" headers="role">elder</td>
 <td class="gt_row gt_right" headers="trophies" style="background-color: #B7E1CD; color: #000000">9000</td>
-<td class="gt_row gt_right" headers="donations" style="background-color: #F9FCFA; color: #000000">18</td>
+<td class="gt_row gt_right" headers="donations" style="background-color: #F5FBF8; color: #000000">28</td>
 <td class="gt_row gt_right" headers="donations_received">0</td>
 <td class="gt_row gt_right" headers="war_day_wins">203</td>
 <td class="gt_row gt_right" headers="elite" style="background-color: #C2C6E4; color: #000000">36</td>
@@ -719,21 +884,21 @@ Decks Used
 <td class="gt_row gt_right" headers="fame_119-4">0</td>
 <td class="gt_row gt_right" headers="total_fame">7,900</td>
 <td class="gt_row gt_right" headers="avg_fame">1,975</td>
-<td class="gt_row gt_right" headers="activity" style="background-color: #C8E8D9; color: #000000">76%</td>
+<td class="gt_row gt_right" headers="activity" style="background-color: #C7E8D8; color: #000000">78%</td>
 <td class="gt_row gt_right" headers="decks_used_119-01" style="background-color: #A2D6F9; color: #000000">16</td>
 <td class="gt_row gt_right" headers="decks_used_119-02" style="background-color: #A2D6F9; color: #000000">16</td>
 <td class="gt_row gt_right" headers="decks_used_119-03" style="background-color: #A2D6F9; color: #000000">16</td>
 <td class="gt_row gt_right" headers="decks_used_119-4" style="background-color: #FFFFFF; color: #000000">0</td>
 <td class="gt_row gt_right" headers="total_decks_used">48</td>
-<td class="gt_row gt_right" headers="rating">8,725</td>
+<td class="gt_row gt_right" headers="rating">8,875</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="name">Rob E</td>
 <td class="gt_row gt_left" headers="tag">#89U82VQ0R</td>
-<td class="gt_row gt_left" headers="last_seen" style="background-color: #FFFFFF; color: #000000">8m</td>
+<td class="gt_row gt_left" headers="last_seen" style="background-color: #FFFFFF; color: #000000">26m</td>
 <td class="gt_row gt_left" headers="role">elder</td>
 <td class="gt_row gt_right" headers="trophies" style="background-color: #B7E1CD; color: #000000">9000</td>
-<td class="gt_row gt_right" headers="donations" style="background-color: #FCFEFD; color: #000000">8</td>
+<td class="gt_row gt_right" headers="donations" style="background-color: #F9FCFA; color: #000000">18</td>
 <td class="gt_row gt_right" headers="donations_received">0</td>
 <td class="gt_row gt_right" headers="war_day_wins">263</td>
 <td class="gt_row gt_right" headers="elite" style="background-color: #8A95CC; color: #FFFFFF">68</td>
@@ -748,18 +913,18 @@ Decks Used
 <td class="gt_row gt_right" headers="fame_119-4">0</td>
 <td class="gt_row gt_right" headers="total_fame">7,300</td>
 <td class="gt_row gt_right" headers="avg_fame">1,825</td>
-<td class="gt_row gt_right" headers="activity" style="background-color: #CAE9DA; color: #000000">74%</td>
+<td class="gt_row gt_right" headers="activity" style="background-color: #C8E8D9; color: #000000">76%</td>
 <td class="gt_row gt_right" headers="decks_used_119-01" style="background-color: #A2D6F9; color: #000000">16</td>
 <td class="gt_row gt_right" headers="decks_used_119-02" style="background-color: #A2D6F9; color: #000000">16</td>
 <td class="gt_row gt_right" headers="decks_used_119-03" style="background-color: #A2D6F9; color: #000000">16</td>
 <td class="gt_row gt_right" headers="decks_used_119-4" style="background-color: #FFFFFF; color: #000000">0</td>
 <td class="gt_row gt_right" headers="total_decks_used">48</td>
-<td class="gt_row gt_right" headers="rating">8,967</td>
+<td class="gt_row gt_right" headers="rating">9,117</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="name">Ribal</td>
 <td class="gt_row gt_left" headers="tag">#2908VQ08</td>
-<td class="gt_row gt_left" headers="last_seen" style="background-color: #FFFFFF; color: #000000">12h 32m</td>
+<td class="gt_row gt_left" headers="last_seen" style="background-color: #FFFFFF; color: #000000">22h 48m</td>
 <td class="gt_row gt_left" headers="role">elder</td>
 <td class="gt_row gt_right" headers="trophies" style="background-color: #B7E1CD; color: #000000">9000</td>
 <td class="gt_row gt_right" headers="donations" style="background-color: #FFFFFF; color: #000000">0</td>
@@ -788,10 +953,10 @@ Decks Used
 <tr class="even">
 <td class="gt_row gt_left" headers="name">Mighty M</td>
 <td class="gt_row gt_left" headers="tag">#8QVQJJ99G</td>
-<td class="gt_row gt_left" headers="last_seen" style="background-color: #FFFFFF; color: #000000">10h 1m</td>
+<td class="gt_row gt_left" headers="last_seen" style="background-color: #FFFFFF; color: #000000">8h 18m</td>
 <td class="gt_row gt_left" headers="role">elder</td>
-<td class="gt_row gt_right" headers="trophies" style="background-color: #BBE3D0; color: #000000">8777</td>
-<td class="gt_row gt_right" headers="donations" style="background-color: #FFFFFF; color: #000000">0</td>
+<td class="gt_row gt_right" headers="trophies" style="background-color: #BAE2CF; color: #000000">8836</td>
+<td class="gt_row gt_right" headers="donations" style="background-color: #FCFEFD; color: #000000">8</td>
 <td class="gt_row gt_right" headers="donations_received">0</td>
 <td class="gt_row gt_right" headers="war_day_wins">138</td>
 <td class="gt_row gt_right" headers="elite" style="background-color: #D8DAEE; color: #000000">23</td>
@@ -806,22 +971,22 @@ Decks Used
 <td class="gt_row gt_right" headers="fame_119-4">0</td>
 <td class="gt_row gt_right" headers="total_fame">7,400</td>
 <td class="gt_row gt_right" headers="avg_fame">1,850</td>
-<td class="gt_row gt_right" headers="activity" style="background-color: #CEEBDD; color: #000000">68%</td>
+<td class="gt_row gt_right" headers="activity" style="background-color: #CCEADB; color: #000000">71%</td>
 <td class="gt_row gt_right" headers="decks_used_119-01" style="background-color: #A2D6F9; color: #000000">16</td>
 <td class="gt_row gt_right" headers="decks_used_119-02" style="background-color: #A2D6F9; color: #000000">16</td>
 <td class="gt_row gt_right" headers="decks_used_119-03" style="background-color: #A2D6F9; color: #000000">16</td>
 <td class="gt_row gt_right" headers="decks_used_119-4" style="background-color: #FFFFFF; color: #000000">0</td>
 <td class="gt_row gt_right" headers="total_decks_used">48</td>
-<td class="gt_row gt_right" headers="rating">8,612</td>
+<td class="gt_row gt_right" headers="rating">8,732</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="name">Piraka9011</td>
 <td class="gt_row gt_left" headers="tag">#9GQRJVV</td>
-<td class="gt_row gt_left" headers="last_seen" style="background-color: #FFFFFF; color: #000000">14h 7m</td>
+<td class="gt_row gt_left" headers="last_seen" style="background-color: #FFFFFF; color: #000000">7h 50m</td>
 <td class="gt_row gt_left" headers="role">member</td>
 <td class="gt_row gt_right" headers="trophies" style="background-color: #C3E6D5; color: #000000">8363</td>
-<td class="gt_row gt_right" headers="donations" style="background-color: #FFFFFF; color: #000000">0</td>
-<td class="gt_row gt_right" headers="donations_received">0</td>
+<td class="gt_row gt_right" headers="donations" style="background-color: #FCFEFD; color: #000000">8</td>
+<td class="gt_row gt_right" headers="donations_received">40</td>
 <td class="gt_row gt_right" headers="war_day_wins">39</td>
 <td class="gt_row gt_right" headers="elite" style="background-color: #F6F7FB; color: #000000">5</td>
 <td class="gt_row gt_right" headers="maxed" style="background-color: #FFF0E1; color: #000000">32</td>
@@ -835,21 +1000,21 @@ Decks Used
 <td class="gt_row gt_right" headers="fame_119-4">0</td>
 <td class="gt_row gt_right" headers="total_fame">1,350</td>
 <td class="gt_row gt_right" headers="avg_fame">337</td>
-<td class="gt_row gt_right" headers="activity" style="background-color: #D5EDE1; color: #000000">59%</td>
+<td class="gt_row gt_right" headers="activity" style="background-color: #D0ECDE; color: #000000">65%</td>
 <td class="gt_row gt_right" headers="decks_used_119-01" style="background-color: #FFFFFF; color: #000000">0</td>
 <td class="gt_row gt_right" headers="decks_used_119-02" style="background-color: #FFFFFF; color: #000000">0</td>
 <td class="gt_row gt_right" headers="decks_used_119-03" style="background-color: #D3EAFC; color: #000000">8</td>
 <td class="gt_row gt_right" headers="decks_used_119-4" style="background-color: #FFFFFF; color: #000000">0</td>
 <td class="gt_row gt_right" headers="total_decks_used">8</td>
-<td class="gt_row gt_right" headers="rating">4,961</td>
+<td class="gt_row gt_right" headers="rating">5,001</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="name">shadowman</td>
 <td class="gt_row gt_left" headers="tag">#RQQJQLR2</td>
-<td class="gt_row gt_left" headers="last_seen" style="background-color: #FFFFFF; color: #000000">55m</td>
+<td class="gt_row gt_left" headers="last_seen" style="background-color: #FFFFFF; color: #000000">4h 46m</td>
 <td class="gt_row gt_left" headers="role">member</td>
-<td class="gt_row gt_right" headers="trophies" style="background-color: #C5E7D7; color: #000000">8219</td>
-<td class="gt_row gt_right" headers="donations" style="background-color: #FCFEFD; color: #000000">8</td>
+<td class="gt_row gt_right" headers="trophies" style="background-color: #C4E7D6; color: #000000">8261</td>
+<td class="gt_row gt_right" headers="donations" style="background-color: #F9FCFA; color: #000000">18</td>
 <td class="gt_row gt_right" headers="donations_received">0</td>
 <td class="gt_row gt_right" headers="war_day_wins">64</td>
 <td class="gt_row gt_right" headers="elite" style="background-color: #FCFCFE; color: #000000">2</td>
@@ -864,18 +1029,18 @@ Decks Used
 <td class="gt_row gt_right" headers="fame_119-4">0</td>
 <td class="gt_row gt_right" headers="total_fame">1,300</td>
 <td class="gt_row gt_right" headers="avg_fame">325</td>
-<td class="gt_row gt_right" headers="activity" style="background-color: #D6EEE2; color: #000000">58%</td>
+<td class="gt_row gt_right" headers="activity" style="background-color: #D3EDE0; color: #000000">61%</td>
 <td class="gt_row gt_right" headers="decks_used_119-01" style="background-color: #E9F5FE; color: #000000">4</td>
 <td class="gt_row gt_right" headers="decks_used_119-02" style="background-color: #FFFFFF; color: #000000">0</td>
 <td class="gt_row gt_right" headers="decks_used_119-03" style="background-color: #D3EAFC; color: #000000">8</td>
 <td class="gt_row gt_right" headers="decks_used_119-4" style="background-color: #FFFFFF; color: #000000">0</td>
 <td class="gt_row gt_right" headers="total_decks_used">12</td>
-<td class="gt_row gt_right" headers="rating">4,427</td>
+<td class="gt_row gt_right" headers="rating">4,577</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="name">Gunner</td>
 <td class="gt_row gt_left" headers="tag">#2J0RC0JC</td>
-<td class="gt_row gt_left" headers="last_seen" style="background-color: #982649; color: #FFFFFF">5d 9h</td>
+<td class="gt_row gt_left" headers="last_seen" style="background-color: #982649; color: #FFFFFF">5d 20h</td>
 <td class="gt_row gt_left" headers="role">elder</td>
 <td class="gt_row gt_right" headers="trophies" style="background-color: #C6E7D7; color: #000000">8177</td>
 <td class="gt_row gt_right" headers="donations" style="background-color: #FFFFFF; color: #000000">0</td>
@@ -904,11 +1069,11 @@ Decks Used
 <tr class="even">
 <td class="gt_row gt_left" headers="name">Tor</td>
 <td class="gt_row gt_left" headers="tag">#2YPC0CCJV</td>
-<td class="gt_row gt_left" headers="last_seen" style="background-color: #FFFFFF; color: #000000">14m</td>
+<td class="gt_row gt_left" headers="last_seen" style="background-color: #FFFFFF; color: #000000">10h 30m</td>
 <td class="gt_row gt_left" headers="role">member</td>
 <td class="gt_row gt_right" headers="trophies" style="background-color: #CDEADC; color: #000000">7809</td>
 <td class="gt_row gt_right" headers="donations" style="background-color: #FBFEFC; color: #000000">10</td>
-<td class="gt_row gt_right" headers="donations_received">32</td>
+<td class="gt_row gt_right" headers="donations_received">48</td>
 <td class="gt_row gt_right" headers="war_day_wins">98</td>
 <td class="gt_row gt_right" headers="elite" style="background-color: #FFFFFF; color: #000000">0</td>
 <td class="gt_row gt_right" headers="maxed" style="background-color: #FEE6D0; color: #000000">51</td>
@@ -922,21 +1087,21 @@ Decks Used
 <td class="gt_row gt_right" headers="fame_119-4">0</td>
 <td class="gt_row gt_right" headers="total_fame">2,550</td>
 <td class="gt_row gt_right" headers="avg_fame">850</td>
-<td class="gt_row gt_right" headers="activity" style="background-color: #D9EFE4; color: #000000">53%</td>
+<td class="gt_row gt_right" headers="activity" style="background-color: #D8EFE4; color: #000000">54%</td>
 <td class="gt_row gt_right" headers="decks_used_119-01" style="background-color: #D48792; color: #FFFFFF">—</td>
 <td class="gt_row gt_right" headers="decks_used_119-02" style="background-color: #D3EAFC; color: #000000">8</td>
 <td class="gt_row gt_right" headers="decks_used_119-03" style="background-color: #BBE0FB; color: #000000">12</td>
 <td class="gt_row gt_right" headers="decks_used_119-4" style="background-color: #FFFFFF; color: #000000">0</td>
 <td class="gt_row gt_right" headers="total_decks_used">20</td>
-<td class="gt_row gt_right" headers="rating">5,768</td>
+<td class="gt_row gt_right" headers="rating">5,736</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="name">Lucky Doog</td>
 <td class="gt_row gt_left" headers="tag">#PUUQ08JG</td>
-<td class="gt_row gt_left" headers="last_seen" style="background-color: #FFFFFF; color: #000000">4h 18m</td>
+<td class="gt_row gt_left" headers="last_seen" style="background-color: #FFFFFF; color: #000000">2h 52m</td>
 <td class="gt_row gt_left" headers="role">leader</td>
 <td class="gt_row gt_right" headers="trophies" style="background-color: #CEEADC; color: #000000">7751</td>
-<td class="gt_row gt_right" headers="donations" style="background-color: #F9FCFA; color: #000000">18</td>
+<td class="gt_row gt_right" headers="donations" style="background-color: #F5FBF8; color: #000000">28</td>
 <td class="gt_row gt_right" headers="donations_received">0</td>
 <td class="gt_row gt_right" headers="war_day_wins">85</td>
 <td class="gt_row gt_right" headers="elite" style="background-color: #E0E2F2; color: #000000">18</td>
@@ -951,18 +1116,18 @@ Decks Used
 <td class="gt_row gt_right" headers="fame_119-4">0</td>
 <td class="gt_row gt_right" headers="total_fame">6,700</td>
 <td class="gt_row gt_right" headers="avg_fame">1,675</td>
-<td class="gt_row gt_right" headers="activity" style="background-color: #DBF0E6; color: #000000">50%</td>
+<td class="gt_row gt_right" headers="activity" style="background-color: #DAF0E5; color: #000000">52%</td>
 <td class="gt_row gt_right" headers="decks_used_119-01" style="background-color: #A2D6F9; color: #000000">16</td>
 <td class="gt_row gt_right" headers="decks_used_119-02" style="background-color: #A2D6F9; color: #000000">16</td>
 <td class="gt_row gt_right" headers="decks_used_119-03" style="background-color: #A2D6F9; color: #000000">16</td>
 <td class="gt_row gt_right" headers="decks_used_119-4" style="background-color: #FFFFFF; color: #000000">0</td>
 <td class="gt_row gt_right" headers="total_decks_used">48</td>
-<td class="gt_row gt_right" headers="rating">8,668</td>
+<td class="gt_row gt_right" headers="rating">8,818</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="name">Stephen Hawking</td>
 <td class="gt_row gt_left" headers="tag">#2QPLG08U</td>
-<td class="gt_row gt_left" headers="last_seen" style="background-color: #FFFFFF; color: #000000">10h 12m</td>
+<td class="gt_row gt_left" headers="last_seen" style="background-color: #FFFFFF; color: #000000">20h 28m</td>
 <td class="gt_row gt_left" headers="role">elder</td>
 <td class="gt_row gt_right" headers="trophies" style="background-color: #CDEADC; color: #000000">7780</td>
 <td class="gt_row gt_right" headers="donations" style="background-color: #FFFFFF; color: #000000">0</td>
@@ -991,7 +1156,7 @@ Decks Used
 <tr class="odd">
 <td class="gt_row gt_left" headers="name">sebañauxlx</td>
 <td class="gt_row gt_left" headers="tag">#PQR8LLQJU</td>
-<td class="gt_row gt_left" headers="last_seen" style="background-color: #982649; color: #FFFFFF">3d 19h</td>
+<td class="gt_row gt_left" headers="last_seen" style="background-color: #982649; color: #FFFFFF">4d 5h</td>
 <td class="gt_row gt_left" headers="role">member</td>
 <td class="gt_row gt_right" headers="trophies" style="background-color: #D8EFE4; color: #000000">7147</td>
 <td class="gt_row gt_right" headers="donations" style="background-color: #FFFFFF; color: #000000">0</td>
@@ -1020,7 +1185,7 @@ Decks Used
 <tr class="even">
 <td class="gt_row gt_left" headers="name">sebañauxlx</td>
 <td class="gt_row gt_left" headers="tag">#PQR8LLQJU</td>
-<td class="gt_row gt_left" headers="last_seen" style="background-color: #982649; color: #FFFFFF">3d 19h</td>
+<td class="gt_row gt_left" headers="last_seen" style="background-color: #982649; color: #FFFFFF">4d 5h</td>
 <td class="gt_row gt_left" headers="role">member</td>
 <td class="gt_row gt_right" headers="trophies" style="background-color: #D8EFE4; color: #000000">7147</td>
 <td class="gt_row gt_right" headers="donations" style="background-color: #FFFFFF; color: #000000">0</td>
@@ -1049,7 +1214,7 @@ Decks Used
 <tr class="odd">
 <td class="gt_row gt_left" headers="name">Alfredo</td>
 <td class="gt_row gt_left" headers="tag">#2VJLYC8J</td>
-<td class="gt_row gt_left" headers="last_seen" style="background-color: #FFFFFF; color: #000000">13h 59m</td>
+<td class="gt_row gt_left" headers="last_seen" style="background-color: #FFFFFF; color: #000000">1d 0h</td>
 <td class="gt_row gt_left" headers="role">elder</td>
 <td class="gt_row gt_right" headers="trophies" style="background-color: #DAF0E5; color: #000000">7063</td>
 <td class="gt_row gt_right" headers="donations" style="background-color: #FFFFFF; color: #000000">0</td>
@@ -1078,7 +1243,7 @@ Decks Used
 <tr class="even">
 <td class="gt_row gt_left" headers="name">Timbo_II</td>
 <td class="gt_row gt_left" headers="tag">#JJPQ9C9RP</td>
-<td class="gt_row gt_left" headers="last_seen" style="background-color: #FFFFFF; color: #000000">11h 35m</td>
+<td class="gt_row gt_left" headers="last_seen" style="background-color: #FFFFFF; color: #000000">21h 51m</td>
 <td class="gt_row gt_left" headers="role">coLeader</td>
 <td class="gt_row gt_right" headers="trophies" style="background-color: #E0F2E9; color: #000000">6726</td>
 <td class="gt_row gt_right" headers="donations" style="background-color: #FFFFFF; color: #000000">0</td>
@@ -1107,9 +1272,9 @@ Decks Used
 <tr class="odd">
 <td class="gt_row gt_left" headers="name">tokyo</td>
 <td class="gt_row gt_left" headers="tag">#L989QP2YQ</td>
-<td class="gt_row gt_left" headers="last_seen" style="background-color: #FFFFFF; color: #000000">18h 13m</td>
+<td class="gt_row gt_left" headers="last_seen" style="background-color: #FFFFFF; color: #000000">1h 23m</td>
 <td class="gt_row gt_left" headers="role">member</td>
-<td class="gt_row gt_right" headers="trophies" style="background-color: #E4F4EC; color: #000000">6500</td>
+<td class="gt_row gt_right" headers="trophies" style="background-color: #E2F3EB; color: #000000">6620</td>
 <td class="gt_row gt_right" headers="donations" style="background-color: #FFFFFF; color: #000000">0</td>
 <td class="gt_row gt_right" headers="donations_received">0</td>
 <td class="gt_row gt_right" headers="war_day_wins">0</td>
@@ -1125,7 +1290,7 @@ Decks Used
 <td class="gt_row gt_right" headers="fame_119-4">0</td>
 <td class="gt_row gt_right" headers="total_fame">0</td>
 <td class="gt_row gt_right" headers="avg_fame">0</td>
-<td class="gt_row gt_right" headers="activity" style="background-color: #F1F9F5; color: #000000">19%</td>
+<td class="gt_row gt_right" headers="activity" style="background-color: #EFF9F4; color: #000000">22%</td>
 <td class="gt_row gt_right" headers="decks_used_119-01" style="background-color: #FFFFFF; color: #000000">0</td>
 <td class="gt_row gt_right" headers="decks_used_119-02" style="background-color: #FFFFFF; color: #000000">0</td>
 <td class="gt_row gt_right" headers="decks_used_119-03" style="background-color: #FFFFFF; color: #000000">0</td>
@@ -1136,7 +1301,7 @@ Decks Used
 <tr class="even">
 <td class="gt_row gt_left" headers="name">cctvBender</td>
 <td class="gt_row gt_left" headers="tag">#28UP9VCJ9</td>
-<td class="gt_row gt_left" headers="last_seen" style="background-color: #FFFFFF; color: #000000">1d 18h</td>
+<td class="gt_row gt_left" headers="last_seen" style="background-color: #982649; color: #FFFFFF">2d 4h</td>
 <td class="gt_row gt_left" headers="role">member</td>
 <td class="gt_row gt_right" headers="trophies" style="background-color: #FBFDFC; color: #000000">5240</td>
 <td class="gt_row gt_right" headers="donations" style="background-color: #FFFFFF; color: #000000">0</td>
@@ -1165,7 +1330,7 @@ Decks Used
 <tr class="odd">
 <td class="gt_row gt_left" headers="name">sontinice</td>
 <td class="gt_row gt_left" headers="tag">#2GRYJ2QV</td>
-<td class="gt_row gt_left" headers="last_seen" style="background-color: #982649; color: #FFFFFF">33d 13h</td>
+<td class="gt_row gt_left" headers="last_seen" style="background-color: #982649; color: #FFFFFF">33d 23h</td>
 <td class="gt_row gt_left" headers="role">elder</td>
 <td class="gt_row gt_right" headers="trophies" style="background-color: #B7E1CD; color: #000000">9000</td>
 <td class="gt_row gt_right" headers="donations" style="background-color: #FFFFFF; color: #000000">0</td>
@@ -1194,7 +1359,7 @@ Decks Used
 <tr class="even">
 <td class="gt_row gt_left" headers="name">christopher26</td>
 <td class="gt_row gt_left" headers="tag">#JYJQC88</td>
-<td class="gt_row gt_left" headers="last_seen" style="background-color: #982649; color: #FFFFFF">162d 10h</td>
+<td class="gt_row gt_left" headers="last_seen" style="background-color: #982649; color: #FFFFFF">162d 20h</td>
 <td class="gt_row gt_left" headers="role">coLeader</td>
 <td class="gt_row gt_right" headers="trophies" style="background-color: #B7E1CD; color: #000000">9000</td>
 <td class="gt_row gt_right" headers="donations" style="background-color: #FFFFFF; color: #000000">0</td>
@@ -1223,7 +1388,7 @@ Decks Used
 <tr class="odd">
 <td class="gt_row gt_left" headers="name">Barlow716</td>
 <td class="gt_row gt_left" headers="tag">#GUG0R829</td>
-<td class="gt_row gt_left" headers="last_seen" style="background-color: #982649; color: #FFFFFF">260d 16h</td>
+<td class="gt_row gt_left" headers="last_seen" style="background-color: #982649; color: #FFFFFF">261d 3h</td>
 <td class="gt_row gt_left" headers="role">coLeader</td>
 <td class="gt_row gt_right" headers="trophies" style="background-color: #B9E2CF; color: #000000">8869</td>
 <td class="gt_row gt_right" headers="donations" style="background-color: #FFFFFF; color: #000000">0</td>
@@ -1252,7 +1417,7 @@ Decks Used
 <tr class="even">
 <td class="gt_row gt_left" headers="name">Pazzo</td>
 <td class="gt_row gt_left" headers="tag">#8JGJGR982</td>
-<td class="gt_row gt_left" headers="last_seen" style="background-color: #982649; color: #FFFFFF">29d 22h</td>
+<td class="gt_row gt_left" headers="last_seen" style="background-color: #982649; color: #FFFFFF">30d 9h</td>
 <td class="gt_row gt_left" headers="role">elder</td>
 <td class="gt_row gt_right" headers="trophies" style="background-color: #BDE3D1; color: #000000">8677</td>
 <td class="gt_row gt_right" headers="donations" style="background-color: #FFFFFF; color: #000000">0</td>
@@ -1281,7 +1446,7 @@ Decks Used
 <tr class="odd">
 <td class="gt_row gt_left" headers="name">Hlavacekjr</td>
 <td class="gt_row gt_left" headers="tag">#2JCJ9J02</td>
-<td class="gt_row gt_left" headers="last_seen" style="background-color: #982649; color: #FFFFFF">342d 15h</td>
+<td class="gt_row gt_left" headers="last_seen" style="background-color: #982649; color: #FFFFFF">343d 1h</td>
 <td class="gt_row gt_left" headers="role">coLeader</td>
 <td class="gt_row gt_right" headers="trophies" style="background-color: #BFE4D2; color: #000000">8554</td>
 <td class="gt_row gt_right" headers="donations" style="background-color: #FFFFFF; color: #000000">0</td>
@@ -1310,7 +1475,7 @@ Decks Used
 <tr class="even">
 <td class="gt_row gt_left" headers="name">christopher26</td>
 <td class="gt_row gt_left" headers="tag">#P8CRCUP0</td>
-<td class="gt_row gt_left" headers="last_seen" style="background-color: #982649; color: #FFFFFF">162d 9h</td>
+<td class="gt_row gt_left" headers="last_seen" style="background-color: #982649; color: #FFFFFF">162d 20h</td>
 <td class="gt_row gt_left" headers="role">coLeader</td>
 <td class="gt_row gt_right" headers="trophies" style="background-color: #C9E9D9; color: #000000">8000</td>
 <td class="gt_row gt_right" headers="donations" style="background-color: #FFFFFF; color: #000000">0</td>
@@ -1339,7 +1504,7 @@ Decks Used
 <tr class="odd">
 <td class="gt_row gt_left" headers="name">Toupes67</td>
 <td class="gt_row gt_left" headers="tag">#90QR8LQV8</td>
-<td class="gt_row gt_left" headers="last_seen" style="background-color: #982649; color: #FFFFFF">35d 17h</td>
+<td class="gt_row gt_left" headers="last_seen" style="background-color: #982649; color: #FFFFFF">36d 3h</td>
 <td class="gt_row gt_left" headers="role">elder</td>
 <td class="gt_row gt_right" headers="trophies" style="background-color: #D5EEE1; color: #000000">7346</td>
 <td class="gt_row gt_right" headers="donations" style="background-color: #FFFFFF; color: #000000">0</td>
@@ -1368,7 +1533,7 @@ Decks Used
 <tr class="even">
 <td class="gt_row gt_left" headers="name">tom</td>
 <td class="gt_row gt_left" headers="tag">#LRGCYJGYC</td>
-<td class="gt_row gt_left" headers="last_seen" style="background-color: #982649; color: #FFFFFF">39d 13h</td>
+<td class="gt_row gt_left" headers="last_seen" style="background-color: #982649; color: #FFFFFF">39d 23h</td>
 <td class="gt_row gt_left" headers="role">member</td>
 <td class="gt_row gt_right" headers="trophies" style="background-color: #D6EEE2; color: #000000">7262</td>
 <td class="gt_row gt_right" headers="donations" style="background-color: #FFFFFF; color: #000000">0</td>
@@ -1397,7 +1562,7 @@ Decks Used
 <tr class="odd">
 <td class="gt_row gt_left" headers="name">TANMAY</td>
 <td class="gt_row gt_left" headers="tag">#92CJPJPCL</td>
-<td class="gt_row gt_left" headers="last_seen" style="background-color: #982649; color: #FFFFFF">49d 0h</td>
+<td class="gt_row gt_left" headers="last_seen" style="background-color: #982649; color: #FFFFFF">49d 10h</td>
 <td class="gt_row gt_left" headers="role">member</td>
 <td class="gt_row gt_right" headers="trophies" style="background-color: #D7EEE3; color: #000000">7242</td>
 <td class="gt_row gt_right" headers="donations" style="background-color: #FFFFFF; color: #000000">0</td>
@@ -1426,7 +1591,7 @@ Decks Used
 <tr class="even">
 <td class="gt_row gt_left" headers="name">Timbo</td>
 <td class="gt_row gt_left" headers="tag">#8GYQ90P2</td>
-<td class="gt_row gt_left" headers="last_seen" style="background-color: #982649; color: #FFFFFF">122d 8h</td>
+<td class="gt_row gt_left" headers="last_seen" style="background-color: #982649; color: #FFFFFF">122d 18h</td>
 <td class="gt_row gt_left" headers="role">coLeader</td>
 <td class="gt_row gt_right" headers="trophies" style="background-color: #D7EEE3; color: #000000">7214</td>
 <td class="gt_row gt_right" headers="donations" style="background-color: #FFFFFF; color: #000000">0</td>
@@ -1455,7 +1620,7 @@ Decks Used
 <tr class="odd">
 <td class="gt_row gt_left" headers="name">sebañauxlx</td>
 <td class="gt_row gt_left" headers="tag">#PQR8LLQJU</td>
-<td class="gt_row gt_left" headers="last_seen" style="background-color: #982649; color: #FFFFFF">3d 19h</td>
+<td class="gt_row gt_left" headers="last_seen" style="background-color: #982649; color: #FFFFFF">4d 5h</td>
 <td class="gt_row gt_left" headers="role">member</td>
 <td class="gt_row gt_right" headers="trophies" style="background-color: #D8EFE4; color: #000000">7147</td>
 <td class="gt_row gt_right" headers="donations" style="background-color: #FFFFFF; color: #000000">0</td>
@@ -1484,7 +1649,7 @@ Decks Used
 <tr class="even">
 <td class="gt_row gt_left" headers="name">sebañauxlx</td>
 <td class="gt_row gt_left" headers="tag">#PQR8LLQJU</td>
-<td class="gt_row gt_left" headers="last_seen" style="background-color: #982649; color: #FFFFFF">3d 19h</td>
+<td class="gt_row gt_left" headers="last_seen" style="background-color: #982649; color: #FFFFFF">4d 5h</td>
 <td class="gt_row gt_left" headers="role">member</td>
 <td class="gt_row gt_right" headers="trophies" style="background-color: #D8EFE4; color: #000000">7147</td>
 <td class="gt_row gt_right" headers="donations" style="background-color: #FFFFFF; color: #000000">0</td>
@@ -1513,7 +1678,7 @@ Decks Used
 <tr class="odd">
 <td class="gt_row gt_left" headers="name">Prince</td>
 <td class="gt_row gt_left" headers="tag">#L8VG22P9</td>
-<td class="gt_row gt_left" headers="last_seen" style="background-color: #982649; color: #FFFFFF">70d 18h</td>
+<td class="gt_row gt_left" headers="last_seen" style="background-color: #982649; color: #FFFFFF">71d 4h</td>
 <td class="gt_row gt_left" headers="role">member</td>
 <td class="gt_row gt_right" headers="trophies" style="background-color: #DBF0E5; color: #000000">7025</td>
 <td class="gt_row gt_right" headers="donations" style="background-color: #FFFFFF; color: #000000">0</td>
@@ -1542,7 +1707,7 @@ Decks Used
 <tr class="even">
 <td class="gt_row gt_left" headers="name">disruption</td>
 <td class="gt_row gt_left" headers="tag">#8VQJV8R02</td>
-<td class="gt_row gt_left" headers="last_seen" style="background-color: #982649; color: #FFFFFF">58d 0h</td>
+<td class="gt_row gt_left" headers="last_seen" style="background-color: #982649; color: #FFFFFF">58d 10h</td>
 <td class="gt_row gt_left" headers="role">member</td>
 <td class="gt_row gt_right" headers="trophies" style="background-color: #EEF8F3; color: #000000">5940</td>
 <td class="gt_row gt_right" headers="donations" style="background-color: #FFFFFF; color: #000000">0</td>
@@ -1571,7 +1736,7 @@ Decks Used
 <tr class="odd">
 <td class="gt_row gt_left" headers="name">SlickTrick.2</td>
 <td class="gt_row gt_left" headers="tag">#P0VR2Q20P</td>
-<td class="gt_row gt_left" headers="last_seen" style="background-color: #982649; color: #FFFFFF">117d 5h</td>
+<td class="gt_row gt_left" headers="last_seen" style="background-color: #982649; color: #FFFFFF">117d 15h</td>
 <td class="gt_row gt_left" headers="role">member</td>
 <td class="gt_row gt_right" headers="trophies" style="background-color: #F2F9F5; color: #000000">5752</td>
 <td class="gt_row gt_right" headers="donations" style="background-color: #FFFFFF; color: #000000">0</td>
@@ -1723,380 +1888,255 @@ Decks Used
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
     }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const disableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'prefetch';
-    }
-  }
-  const enableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'stylesheet';
-    }
-  }
-  const manageTransitions = (selector, allowTransitions) => {
-    const els = window.document.querySelectorAll(selector);
-    for (let i=0; i < els.length; i++) {
-      const el = els[i];
-      if (allowTransitions) {
-        el.classList.remove('notransition');
-      } else {
-        el.classList.add('notransition');
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-  }
-  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-    let newTheme = '';
-    if(darkModeDefault) {
-      newTheme = isAlternate ? baseTheme : alternateTheme;
-    } else {
-      newTheme = isAlternate ? alternateTheme : baseTheme;
-    }
-    const changeGiscusTheme = () => {
-      // From: https://github.com/giscus/giscus/issues/336
-      const sendMessage = (message) => {
-        const iframe = document.querySelector('iframe.giscus-frame');
-        if (!iframe) return;
-        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-      sendMessage({
-        setConfig: {
-          theme: newTheme
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/legenddynasty\.dev");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
       });
     }
-    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-    if (isGiscussLoaded) {
-      changeGiscusTheme();
-    }
-  }
-  const toggleColorMode = (alternate) => {
-    // Switch the stylesheets
-    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-    manageTransitions('#quarto-margin-sidebar .nav-link', false);
-    if (alternate) {
-      enableStylesheet(alternateStylesheets);
-      for (const sheetNode of alternateStylesheets) {
-        if (sheetNode.id === "quarto-bootstrap") {
-          toggleBodyColorMode(sheetNode);
-        }
-      }
-    } else {
-      disableStylesheet(alternateStylesheets);
-      toggleBodyColorPrimary();
-    }
-    manageTransitions('#quarto-margin-sidebar .nav-link', true);
-    // Switch the toggles
-    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-    for (let i=0; i < toggles.length; i++) {
-      const toggle = toggles[i];
-      if (toggle) {
-        if (alternate) {
-          toggle.classList.add("alternate");     
-        } else {
-          toggle.classList.remove("alternate");
-        }
-      }
-    }
-    // Hack to workaround the fact that safari doesn't
-    // properly recolor the scrollbar when toggling (#1455)
-    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-      manageTransitions("body", false);
-      window.scrollTo(0, 1);
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        manageTransitions("body", true);
-      }, 40);  
-    }
-  }
-  const isFileUrl = () => { 
-    return window.location.protocol === 'file:';
-  }
-  const hasAlternateSentinel = () => {  
-    let styleSentinel = getColorSchemeSentinel();
-    if (styleSentinel !== null) {
-      return styleSentinel === "alternate";
-    } else {
-      return false;
-    }
-  }
-  const setStyleSentinel = (alternate) => {
-    const value = alternate ? "alternate" : "default";
-    if (!isFileUrl()) {
-      window.localStorage.setItem("quarto-color-scheme", value);
-    } else {
-      localAlternateSentinel = value;
-    }
-  }
-  const getColorSchemeSentinel = () => {
-    if (!isFileUrl()) {
-      const storageValue = window.localStorage.getItem("quarto-color-scheme");
-      return storageValue != null ? storageValue : localAlternateSentinel;
-    } else {
-      return localAlternateSentinel;
-    }
-  }
-  const darkModeDefault = false;
-  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-  // Dark / light mode switch
-  window.quartoToggleColorScheme = () => {
-    // Read the current dark / light value 
-    let toAlternate = !hasAlternateSentinel();
-    toggleColorMode(toAlternate);
-    setStyleSentinel(toAlternate);
-    toggleGiscusIfUsed(toAlternate, darkModeDefault);
-  };
-  // Ensure there is a toggle, if there isn't float one in the top right
-  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-    const a = window.document.createElement('a');
-    a.classList.add('top-right');
-    a.classList.add('quarto-color-scheme-toggle');
-    a.href = "";
-    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-    const i = window.document.createElement("i");
-    i.classList.add('bi');
-    a.appendChild(i);
-    window.document.body.appendChild(a);
-  }
-  // Switch to dark mode if need be
-  if (hasAlternateSentinel()) {
-    toggleColorMode(true);
-  } else {
-    toggleColorMode(false);
-  }
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/legenddynasty\.dev");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
         }
-        return container.innerHTML
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -2104,185 +2144,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 </div> <!-- /content -->
 
 
